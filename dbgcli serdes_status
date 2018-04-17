@@ -1,0 +1,33 @@
+dbgcli serdes_status 
+dbg_printf comes from 
+uif_dbgcli.c
+introducing a new api in the libdbgcli so that the caller if they want to generate the output in a key value pair, it is an functionality. 
+whoever wants to dump it 
+
+-- modify the current debugdump, write a couple of function that can just generate the yaml compatible versions for each command as they are passed by and written to a file just like debugdump. 
+
+
+dbgcli - all commands are the same level. try to make it more cateogrised, and have automatic completion. 
+
+define a hierarchy and say what functionality needs to be executed at the end of the 
+
+parser is a part of infra, 
+
+write files with macro, that defines the hierarchy. 
+
+build a yaml web service . 
+
+
+x="dbgcli -s mcp -q -e uif 0"
+#echo $($x)
+a=$($x)
+echo "$a" > tst
+
+ while IFS= read -r line
+           do
+echo $line ...
+done < tst
+
+#while read i;
+#do echo "$i";
+#done < $a

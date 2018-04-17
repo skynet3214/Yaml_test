@@ -1,0 +1,3226 @@
+hostname: "
+\ vicfw-user-ucs40g-1 \n
+"
+subsysname: "
+\ BC01_MEZZ0402 \n
+"
+Transceiver Information: "
+\  Transceiver is likely not inserted in port 0 (Status: -3) \n
+\  ### \n
+\ Transceiver is likely not inserted in port 1 (Status: -3) \n
+"
+uif 0: "
+\   uif:            0 \n
+\   ifname:         \"eth0\" \n
+\   adapter_ifname: \"eth0.4043\" \n
+\   mac:            a4:93:4c:63:ea:ae \n
+\   state:          RUNNING_NIV \n
+\   nivinfo:        \n
+\     mac:   8c:60:4f:bd:68:ac \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   port_mask:      0x0f \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0xff \n
+\   flags:          ENABLED, LINKUP, PAUSE_PFC, DCBX_MTU, VNTAG \n
+\   MTU Table:      [0]=9216, [1]=9216, [2]=9216, [3]=2158, [4]=9216, [5]=9216, [6]=9216, [7]=9216 \n
+\   DCBX Mode:      CIN \n
+\   Ports UP:       1, 3 \n
+\   Ports enabled:  1, 3 \n
+"
+adv_uifetscfg 0: "
+\   pri : [0 1 2 3 4 5 0 inf] \n
+\   pg  : [14% 8% 22% 17% 28% 11%] \n
+\   npgs: 6 \n
+"
+def_uifetscfg 0: "
+\   pri : [inf inf inf inf inf inf inf inf] \n
+\   pg  : [] \n
+\   npgs: 0 \n
+"
+uifcfg 0: "
+\   ig_default_vlan:        0 \n
+\   ig_default_dp:          0 \n
+\   ig_default_cos:         0 \n
+\   eg_default_vlan:        0 \n
+\   eg_default_dp:          0 \n
+\   eg_default_cos:         0 \n
+\   is_trunk:               1 \n
+\   ig_override_l2_tag:     0 \n
+\   eg_override_l2_tag:     0 \n
+\   eg_vlan_rewrite_mode:   2 \n
+\   vntag_mode:             1 \n
+\   local_fwd_enable:       0 \n
+\   eg_i2n_cos_map_disable: 0 \n
+\   vif_base:               0 \n
+\   ig_fwd_mask            [0] [1,3-127] \n
+\   ig_fwd_mask            [1] [1,3-127] \n
+\   ig_fwd_mask            [2] [0-127] \n
+\   ig_fwd_mask            [3] [1,3-127] \n
+"
+uifetscfg 0: "
+\   pri : [0 1 2 3 4 5 0 inf] \n
+\   pg  : [14% 8% 22% 17% 28% 11%] \n
+\   npgs: 6 \n
+"
+uifqoscfg 0: "
+\   userpri_refcnt:         [1 0 0 0 0 0 0 1]  0 FCoE vnics \n
+\   userpri_to_cos:         [1 X X X X X X 0] \n
+\   net_eg_pfifo_size:      [0xc0 0x740 0x0 0x0 0x0 0x0 0x0 0x0] \n
+\   net_eg_pfifo_net_cos:   [0x80 0x01 0x00 0x00 0x00 0x00 0x00 0x00] \n
+\   net_loop_pfifo_size:    [0x400 0x00 0x00 0x00 0x00 0x00 0x00 0x00] \n
+\   net_loop_pfifo_net_cos: [0x08 0x00 0x00 0x00 0x00 0x00 0x00 0x00] \n
+\   net_eg_pps_level1_wgt:  [2048 2048 0 0 0 0 0 0] \n
+\   net_eg_pps_prio_msk:    0x01 \n
+\  \n
+\   LOOP: \n
+\     cos | pfifo_size     xoff     eg_cos       loop type \n
+\     -----+------------------------------------------------------------------------- \n
+\       0 |     0x0400     0x0370   0                    \n
+\  \n
+\   EG: \n
+\     cos | pfifo_size     wgt  net_cos       loop type \n
+\     -----+---------------------------------------------------------- \n
+\       0 |     0x00c0  strict  7          management refs=8 \n
+\       1 |     0x0740    2048  0           \n
+\  \n
+\   IG: \n
+\     cos   pfifo_size    xon     xoff    \n
+\     -----+------------------------------------------------ \n
+\       0 |     0x0800   0x0580   0x0600 \n
+\       1 |     0x0800   0x0580   0x0600 \n
+\       2 |     0x0800   0x0580   0x0600 \n
+\       3 |     0x0800   0x0580   0x0600 \n
+\       4 |     0x0800   0x0580   0x0600 \n
+\       5 |     0x0800   0x0580   0x0600 \n
+\       6 |     0x0800   0x0580   0x0600 \n
+\       7 |     0x0800   0x0580   0x0600 \n
+"
+vic-dump 0: "
+\ vic: { \n
+\   txq: { \n
+\     txq: {} \n
+\     credits_used: 0 \n
+\     credit_budget: 4 \n
+\   } \n
+\   shorttimer: { \n
+\     depth: 0 \n
+\     timeo: 2000 \n
+\     ctxflag: SHORTTIMEO \n
+\     timeoq: {} \n
+\   } \n
+\   longtimer: { \n
+\     depth: 0 \n
+\     timeo: 10000 \n
+\     ctxflag: LONGTIMEO \n
+\     timeoq: {} \n
+\   } \n
+\   inreqdb: { \n
+\     count: 0 \n
+\     maxcount: 65535 \n
+\     hashsize: 16 \n
+\     hash: {} \n
+\     ctxflag: INREQDB \n
+\   } \n
+\   outreqdb: { \n
+\     count: 0 \n
+\     maxcount: 65535 \n
+\     hashsize: 16 \n
+\     hash: {} \n
+\     ctxflag: OUTREQDB \n
+\   } \n
+\   maxpdulen: 1492 \n
+\   maxpeermsg: 1464 \n
+\   shorttimeo_ms: 2000 \n
+\   maxtries: 5 \n
+\   maxtries_long: 12 \n
+\   longtimeo_ms: 10000 \n
+\   msgid: 11 \n
+\   local_mac: a4:93:4c:63:ea:ae \n
+\   peer_mac: 8c:60:4f:bd:68:ac \n
+\   opaque: 0x56f260 \n
+\   reqtimeomask: OPEN VIF_DELETE VIF_REGISTER  \n
+\   flags: RUNNING FLUSHDB \n
+\ } \n
+"
+vic-stats 0: "
+\ vicstats: { \n
+\       169393 (rxtotal             ) rx frames received (whilst enabled) \n
+\       169393 (rxgood              ) good frames received \n
+\       169371 (rxnewreq            ) new requests \n
+\           11 (txreq               ) requests transmitted \n
+\       169371 (txsuccess           ) success responses transmitted \n
+\ } \n
+"
+vicapp 0: "
+\                  uif : 0 \n
+\               ifname : eth0 \n
+\                 peer : 8c:60:4f:bd:68:ac \n
+\                state : OPEN \n
+\                flags : INIT, OPEN_SENT, OPEN_RECV, ACTIVE, OPEN_EXT, SUP_GENPROVINFO, unknown flags 0x \n
+\             capflags : VLANREQD \n
+\           maxcredits : 256 \n
+\      peer_maxcredits : 4 \n
+\                nuifs : 2 \n
+\                nvifs : 256 \n
+\            nvifs_eth : 256 \n
+\             nvifs_fc : 256 \n
+\            nviflists : 4096 \n
+\       open_retry_cnt : 3 \n
+\       open_retry_max : 3 \n
+\   open_wait_timeo_us : 30000000 \n
+\                 sock : 55 \n
+\              ifindex : 2 \n
+"
+vicappstats 0: "
+\      vic_starts :1               \n
+\    packets_sent :169383          \n
+\    packets_recv :169394          \n
+\ vic_app stats 0 { \n
+\        REQ-TYPE  SUB-TYPE  REQ_SENT RESP_RECV  REQ_RECV RESP_SENT    RETRY/INPRO \n
+\            OPEN                   1         1         1         1         0/0 \n
+\         CREATE2                   2         2         0         0         0/1 \n
+\          DELETE                   1         1         0         0         0/1 \n
+\          ENABLE                   2         2         0         0         0/1 \n
+\                 Enable(A)         2         2 \n
+\                 Enable(S)         0         0 \n
+\            SET3                   0         0         2         2         0/0 \n
+\    VIF_LIST_SET                   0         0        22        22         0/0 \n
+\        REGISTER                   5         5         0         0         0/1 \n
+\ EXT_STATS_ARRAY_GET                   0         0    169347    169347         0/0 \n
+\           TOTAL                  11        11    169372    169372 \n
+\ } \n
+"
+uif 1: "
+\   uif:            1 \n
+\   ifname:         \"eth1\" \n
+\   adapter_ifname: \"eth1.4043\" \n
+\   mac:            a4:93:4c:63:ea:af \n
+\   state:          RUNNING_NIV \n
+\   nivinfo:        \n
+\     mac:   8c:60:4f:bd:2c:d4 \n
+\     vers:  0 \n
+\     vntag: 1 \n
+\   opts:           DCBX, JUMBO \n
+\   port_mask:      0x0f \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0xff \n
+\   flags:          ENABLED, LINKUP, PAUSE_PFC, DCBX_MTU, VNTAG \n
+\   MTU Table:      [0]=9216, [1]=9216, [2]=9216, [3]=2158, [4]=9216, [5]=9216, [6]=9216, [7]=9216 \n
+\   DCBX Mode:      CIN \n
+\   Ports UP:       0, 2 \n
+\   Ports enabled:  0, 2 \n
+"
+adv_uifetscfg 1: "
+\   pri : [0 1 2 3 4 5 0 inf] \n
+\   pg  : [14% 8% 22% 17% 28% 11%] \n
+\   npgs: 6 \n
+"
+def_uifetscfg 1: "
+\   pri : [inf inf inf inf inf inf inf inf] \n
+\   pg  : [] \n
+\   npgs: 0 \n
+"
+uifcfg 1: "
+\   ig_default_vlan:        0 \n
+\   ig_default_dp:          0 \n
+\   ig_default_cos:         0 \n
+\   eg_default_vlan:        0 \n
+\   eg_default_dp:          0 \n
+\   eg_default_cos:         0 \n
+\   is_trunk:               1 \n
+\   ig_override_l2_tag:     0 \n
+\   eg_override_l2_tag:     0 \n
+\   eg_vlan_rewrite_mode:   2 \n
+\   vntag_mode:             1 \n
+\   local_fwd_enable:       0 \n
+\   eg_i2n_cos_map_disable: 0 \n
+\   vif_base:               0 \n
+\   ig_fwd_mask            [0] [0,2-127] \n
+\   ig_fwd_mask            [1] [0-127] \n
+\   ig_fwd_mask            [2] [0,2-127] \n
+\   ig_fwd_mask            [3] [0-127] \n
+"
+uifetscfg 1: "
+\   pri : [0 1 2 3 4 5 0 inf] \n
+\   pg  : [14% 8% 22% 17% 28% 11%] \n
+\   npgs: 6 \n
+"
+uifqoscfg 1: "
+\   userpri_refcnt:         [1 0 0 0 0 0 0 1]  0 FCoE vnics \n
+\   userpri_to_cos:         [1 X X X X X X 0] \n
+\   net_eg_pfifo_size:      [0xc0 0x740 0x0 0x0 0x0 0x0 0x0 0x0] \n
+\   net_eg_pfifo_net_cos:   [0x80 0x01 0x00 0x00 0x00 0x00 0x00 0x00] \n
+\   net_loop_pfifo_size:    [0x400 0x00 0x00 0x00 0x00 0x00 0x00 0x00] \n
+\   net_loop_pfifo_net_cos: [0x08 0x00 0x00 0x00 0x00 0x00 0x00 0x00] \n
+\   net_eg_pps_level1_wgt:  [2048 2048 0 0 0 0 0 0] \n
+\   net_eg_pps_prio_msk:    0x01 \n
+\  \n
+\   LOOP: \n
+\     cos | pfifo_size     xoff     eg_cos       loop type \n
+\     -----+------------------------------------------------------------------------- \n
+\       0 |     0x0400     0x0370   0                    \n
+\  \n
+\   EG: \n
+\     cos | pfifo_size     wgt  net_cos       loop type \n
+\     -----+---------------------------------------------------------- \n
+\       0 |     0x00c0  strict  7          management refs=6 \n
+\       1 |     0x0740    2048  0           \n
+\  \n
+\   IG: \n
+\     cos   pfifo_size    xon     xoff    \n
+\     -----+------------------------------------------------ \n
+\       0 |     0x0800   0x0580   0x0600 \n
+\       1 |     0x0800   0x0580   0x0600 \n
+\       2 |     0x0800   0x0580   0x0600 \n
+\       3 |     0x0800   0x0580   0x0600 \n
+\       4 |     0x0800   0x0580   0x0600 \n
+\       5 |     0x0800   0x0580   0x0600 \n
+\       6 |     0x0800   0x0580   0x0600 \n
+\       7 |     0x0800   0x0580   0x0600 \n
+"
+vic-dump 1: "
+\ vic: { \n
+\   txq: { \n
+\     txq: {} \n
+\     credits_used: 0 \n
+\     credit_budget: 4 \n
+\   } \n
+\   shorttimer: { \n
+\     depth: 0 \n
+\     timeo: 2000 \n
+\     ctxflag: SHORTTIMEO \n
+\     timeoq: {} \n
+\   } \n
+\   longtimer: { \n
+\     depth: 0 \n
+\     timeo: 10000 \n
+\     ctxflag: LONGTIMEO \n
+\     timeoq: {} \n
+\   } \n
+\   inreqdb: { \n
+\     count: 0 \n
+\     maxcount: 65535 \n
+\     hashsize: 16 \n
+\     hash: {} \n
+\     ctxflag: INREQDB \n
+\   } \n
+\   outreqdb: { \n
+\     count: 0 \n
+\     maxcount: 65535 \n
+\     hashsize: 16 \n
+\     hash: {} \n
+\     ctxflag: OUTREQDB \n
+\   } \n
+\   maxpdulen: 1492 \n
+\   maxpeermsg: 1464 \n
+\   shorttimeo_ms: 2000 \n
+\   maxtries: 5 \n
+\   maxtries_long: 12 \n
+\   longtimeo_ms: 10000 \n
+\   msgid: 3 \n
+\   local_mac: a4:93:4c:63:ea:af \n
+\   peer_mac: 8c:60:4f:bd:2c:d4 \n
+\   opaque: 0x56f73c \n
+\   reqtimeomask: OPEN VIF_DELETE VIF_REGISTER  \n
+\   flags: RUNNING FLUSHDB \n
+\ } \n
+"
+vic-stats 1: "
+\ vicstats: { \n
+\       181021 (rxtotal             ) rx frames received (whilst enabled) \n
+\       181021 (rxgood              ) good frames received \n
+\       181015 (rxnewreq            ) new requests \n
+\            3 (txreq               ) requests transmitted \n
+\       181015 (txsuccess           ) success responses transmitted \n
+\ } \n
+"
+vicapp 1: "
+\                  uif : 1 \n
+\               ifname : eth1 \n
+\                 peer : 8c:60:4f:bd:2c:d4 \n
+\                state : OPEN \n
+\                flags : INIT, OPEN_SENT, OPEN_RECV, ACTIVE, OPEN_EXT, SUP_GENPROVINFO, unknown flags 0x \n
+\             capflags : VLANREQD \n
+\           maxcredits : 256 \n
+\      peer_maxcredits : 4 \n
+\                nuifs : 2 \n
+\                nvifs : 256 \n
+\            nvifs_eth : 256 \n
+\             nvifs_fc : 256 \n
+\            nviflists : 4096 \n
+\       open_retry_cnt : 3 \n
+\       open_retry_max : 3 \n
+\   open_wait_timeo_us : 30000000 \n
+\                 sock : 58 \n
+\              ifindex : 3 \n
+"
+vicappstats 1: "
+\      vic_starts :1               \n
+\    packets_sent :181018          \n
+\    packets_recv :181021          \n
+\ vic_app stats 1 { \n
+\        REQ-TYPE  SUB-TYPE  REQ_SENT RESP_RECV  REQ_RECV RESP_SENT    RETRY/INPRO \n
+\            OPEN                   1         1         1         1         0/0 \n
+\         CREATE2                   1         1         0         0         0/1 \n
+\          ENABLE                   1         1         0         0         0/1 \n
+\                 Enable(A)         1         1 \n
+\                 Enable(S)         0         0 \n
+\            SET3                   0         0         1         1         0/0 \n
+\    VIF_LIST_SET                   0         0     11657     11657         0/0 \n
+\ EXT_STATS_ARRAY_GET                   0         0    169356    169356         0/0 \n
+\           TOTAL                   3         3    181015    181015 \n
+\ } \n
+"
+dcem-macstats 0: "
+\                                     TOTAL DESCRIPTION \n
+\                                      9036 Tx frames len == 64 \n
+\                                       934 Tx frames 64 < len <= 127 \n
+\                                    225432 Tx frames 128 <= len <= 255 \n
+\                                       150 Tx frames 256 <= len <= 511 \n
+\                                      3432 Tx frames 512 <= len <= 1023 \n
+\                                       111 Tx frames 1024 <= len <= 1518 \n
+\                                       139 Tx frames 1519 <= len <= 2047 \n
+\                                    239234 Tx total packets \n
+\                                  46568883 Tx bytes \n
+\                                    239234 Tx good packets \n
+\                                     13774 Tx unicast frames \n
+\                                    225355 Tx multicast frames \n
+\                                       105 Tx broadcast frames \n
+\                                       168 Rx Frames len == 64 \n
+\                                  20102072 Rx Frames 64 < len <= 127 \n
+\                                     63178 Rx Frames 128 <= len <= 255 \n
+\                                    298217 Rx Frames 256 <= len <= 511 \n
+\                                      5855 Rx Frames 512 <= len <= 1023 \n
+\                                  20469490 Rx total received packets \n
+\                                1560567726 Rx bytes \n
+\                                  20469490 Rx good packets \n
+\                                     13631 Rx unicast frames \n
+\                                    468763 Rx multicast frames \n
+\                                  19987096 Rx broadcast frames \n
+\                                  46568883 Tx bytes for good packets \n
+\                                1560567726 Rx bytes for good packets \n
+\                0.000bps                   Tx Rate \n
+\                0.000bps                   Rx Rate \n
+"
+PORT 0, SUBPORT 0: "
+\ dcem-macstats 0 0: \n
+\                                     TOTAL DESCRIPTION \n
+\                0.000bps                   Tx Rate \n
+\                0.000bps                   Rx Rate \n
+"
+dcem-port 0 0: "
+\   uif :           0 \n
+\   port:           0 \n
+\   mac:            a4:93:4c:63:ea:b2 \n
+\   adminstate:     ENABLED \n
+\   operstate:      DOWN \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   9216 \n
+\   pausetype:      PFC \n
+\   pausemap:       0xff \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: RESET, error: AN_FAILED, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 0 \n
+\   vasona total_an_fail: 258567 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 258567 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 0 \n
+\   vasona current_wait_count: 101 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 0 0: "
+\   uif:            0 \n
+\   port:           0 \n
+\   dcos_ifname:    \"eth0-0\" \n
+\   lldp_ifindex:   5 \n
+\   mac:            a4:93:4c:63:ea:b2 \n
+\   state:          WAIT_LINKUP \n
+\   lldp_sock:      31 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee570 \n
+\   nivinfo:        \n
+\     mac:   00:00:00:00:00:00 \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0x00 \n
+\   flags:          ENABLED \n
+\   MTU Table:      [0]=0, [1]=0, [2]=0, [3]=0, [4]=0, [5]=0, [6]=0, [7]=0 \n
+"
+lldp-port 0: "
+\   portid:  0 \n
+\   state:   WLINKUP \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX \n
+\   peerttl: 0 \n
+\   timers:  \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b2 \n
+\     Type=3, Len=2: d4 09 \n
+\     Type=127, Len=96: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 00 \n
+\       0a 05 00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 \n
+\       00 c0 01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 \n
+\       00 00 04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 \n
+\       00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\   statistics: \n
+\     txframestotal:           0 \n
+\     rxframestotal:           0 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    0 \n
+\     rxtlvsunrecognizedtotal: 0 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 0: "
+\   portid:   0 \n
+\   state:    WLINKUP \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:     \n
+\   seqno:    1 \n
+\   ackno:    0 \n
+\   myackno:  0 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\   flist_add: \n
+"
+PORT 0, SUBPORT 1: "
+\ dcem-macstats 0 1: \n
+\                DELTA                TOTAL DESCRIPTION \n
+\                    0                    1 Tx frames len == 64 \n
+\                    0                    1 Tx frames 64 < len <= 127 \n
+\                    0                27983 Tx frames 128 <= len <= 255 \n
+\                    0                   47 Tx frames 256 <= len <= 511 \n
+\                    0                 3331 Tx frames 512 <= len <= 1023 \n
+\                    0                31363 Tx total packets \n
+\                    0              6735511 Tx bytes \n
+\                    0                31363 Tx good packets \n
+\                    0                 3377 Tx unicast frames \n
+\                    0                27985 Tx multicast frames \n
+\                    0                    1 Tx broadcast frames \n
+\                    0                  168 Rx Frames len == 64 \n
+\                  138              9608765 Rx Frames 64 < len <= 127 \n
+\                    1                27773 Rx Frames 128 <= len <= 255 \n
+\                    2               142767 Rx Frames 256 <= len <= 511 \n
+\                    0                   10 Rx Frames 512 <= len <= 1023 \n
+\                  141              9779483 Rx total received packets \n
+\                10567            730973317 Rx bytes \n
+\                  141              9779483 Rx good packets \n
+\                    0                   50 Rx unicast frames \n
+\                    4               351516 Rx multicast frames \n
+\                  137              9427917 Rx broadcast frames \n
+\                    0              6735511 Tx bytes for good packets \n
+\                10567            730973317 Rx bytes for good packets \n
+\                6.843kbps                  Rx Rate \n
+"
+dcem-port 0 1: "
+\   uif :           0 \n
+\   port:           1 \n
+\   mac:            a4:93:4c:63:ea:b3 \n
+\   adminstate:     ENABLED \n
+\   operstate:      UP \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   1522 \n
+\   pausetype:      STD \n
+\   pausemap:       0x00 \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: UP, error: NONE, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 1 \n
+\   vasona total_an_fail: 0 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 0 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 1 \n
+\   vasona current_wait_count: 61 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 0 1: "
+\   uif:            0 \n
+\   port:           1 \n
+\   dcos_ifname:    \"eth0-1\" \n
+\   lldp_ifindex:   6 \n
+\   mac:            a4:93:4c:63:ea:b3 \n
+\   state:          RUNNING \n
+\   lldp_sock:      34 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee5b0 \n
+\   nivinfo:        \n
+\     mac:   8c:60:4f:bd:68:ac \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0xff \n
+\   flags:          ENABLED, LINKUP, PAUSE_PFC, DCBX_MTU, DCBX_NIV, VNTAG \n
+\   MTU Table:      [0]=9216, [1]=9216, [2]=9216, [3]=2158, [4]=9216, [5]=9216, [6]=9216, [7]=9216 \n
+"
+lldp-port 1: "
+\   portid:  1 \n
+\   state:   RUNNING \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX LINKUP \n
+\   peerttl: 120 \n
+\   timers:  REFRESHTIMER=166 RXINFOTTLTIMER=1019 \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b3 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=127, Len=110: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       0e 0c 00 00 80 00 10 00 a4 93 4c 63 ea ae 0a 05 \n
+\       00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 00 c0 \n
+\       01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 00 00 \n
+\       04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 00 0f \n
+\       00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\     Type=1, Len=7: 04 00 42 68 96 e3 15 \n
+\     Type=2, Len=10: 07 45 74 68 31 2f 31 2f 31 36 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=4, Len=14: 45 74 68 65 72 6e 65 74 31 2f 31 2f 31 36 \n
+\     Type=5, Len=21: \n
+\       76 69 63 66 77 2d 75 73 65 72 2d 75 63 73 34 30 \n
+\       67 2d 31 2d 41 \n
+\     Type=6, Len=165: \n
+\       43 69 73 63 6f 20 4e 65 78 75 73 20 4f 70 65 72 \n
+\       61 74 69 6e 67 20 53 79 73 74 65 6d 20 28 4e 58 \n
+\       2d 4f 53 29 20 53 6f 66 74 77 61 72 65 20 35 2e \n
+\       30 28 33 29 4e 32 28 33 2e 32 32 61 29 0a 54 41 \n
+\       43 20 73 75 70 70 6f 72 74 3a 20 68 74 74 70 3a \n
+\       2f 2f 77 77 77 2e 63 69 73 63 6f 2e 63 6f 6d 2f \n
+\       74 61 63 0a 43 6f 70 79 72 69 67 68 74 20 28 63 \n
+\       29 20 32 30 30 32 2d 32 30 31 37 2c 20 43 69 73 \n
+\       63 6f 20 53 79 73 74 65 6d 73 2c 20 49 6e 63 2e \n
+\       20 41 6c 6c 20 72 69 67 68 74 73 20 72 65 73 65 \n
+\       72 76 65 64 2e \n
+\     Type=7, Len=4: 00 04 00 04 \n
+\     Type=127, Len=103: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       06 05 00 00 80 00 ff 0a 05 00 00 80 00 08 10 14 \n
+\       00 00 80 00 24 00 24 00 24 00 08 6e 24 00 24 00 \n
+\       24 00 24 00 04 1c 00 00 80 00 0e 08 16 11 1c 0b \n
+\       00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 \n
+\       00 21 0e 0c 00 00 80 00 9f ff 8c 60 4f bd 68 ac \n
+\       0a 05 00 00 c0 01 02 \n
+\     Type=127, Len=4: 00 01 42 04 \n
+\     Type=127, Len=6: 00 80 c2 01 00 01 \n
+\   statistics: \n
+\     txframestotal:           27982 \n
+\     rxframestotal:           27989 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    27989 \n
+\     rxtlvsunrecognizedtotal: 27989 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 1: "
+\   portid:   1 \n
+\   state:    RUNNING \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:    LINKUP \n
+\   seqno:    1 \n
+\   ackno:    1 \n
+\   myackno:  1 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=7, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 10 00 a4 93 4c 63 ea ae  \n
+\       desiredcfg:  10 00 a4 93 4c 63 ea ae  \n
+\       peercfg:     9f ff 8c 60 4f bd 68 ac  \n
+\       localparamsflags: ENABLED ADVERTISE \n
+\       flags:            ENABLED OPERMODE SYNCD ADVERTISE OPERCFGDESIRED NEWPEERCFG \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     08  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:     24 00 24 00 24 00 08 6e 24 00 24 00 24 00 24 00  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     ff  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:     0e 08 16 11 1c 0b 00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 00 21  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\   flist_add: \n
+"
+PORT 0, SUBPORT 2: "
+\ dcem-macstats 0 2: \n
+\                                     TOTAL DESCRIPTION \n
+\                0.000bps                   Tx Rate \n
+\                0.000bps                   Rx Rate \n
+"
+dcem-port 0 2: "
+\   uif :           0 \n
+\   port:           2 \n
+\   mac:            a4:93:4c:63:ea:b4 \n
+\   adminstate:     ENABLED \n
+\   operstate:      DOWN \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   1522 \n
+\   pausetype:      STD \n
+\   pausemap:       0x00 \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: RESET, error: AN_FAILED, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 0 \n
+\   vasona total_an_fail: 258567 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 258567 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 0 \n
+\   vasona current_wait_count: 101 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 0 2: "
+\   uif:            0 \n
+\   port:           2 \n
+\   dcos_ifname:    \"eth0-2\" \n
+\   lldp_ifindex:   7 \n
+\   mac:            a4:93:4c:63:ea:b4 \n
+\   state:          WAIT_LINKUP \n
+\   lldp_sock:      37 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee5f0 \n
+\   nivinfo:        \n
+\     mac:   00:00:00:00:00:00 \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0x00 \n
+\   flags:          ENABLED \n
+\   MTU Table:      [0]=0, [1]=0, [2]=0, [3]=0, [4]=0, [5]=0, [6]=0, [7]=0 \n
+"
+lldp-port 2: "
+\   portid:  2 \n
+\   state:   WLINKUP \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX \n
+\   peerttl: 0 \n
+\   timers:  \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b4 \n
+\     Type=3, Len=2: 00 00 \n
+\     Type=127, Len=96: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 00 \n
+\       0a 05 00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 \n
+\       00 c0 01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 \n
+\       00 00 04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 \n
+\       00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\   statistics: \n
+\     txframestotal:           0 \n
+\     rxframestotal:           0 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    0 \n
+\     rxtlvsunrecognizedtotal: 0 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 2: "
+\   portid:   2 \n
+\   state:    WLINKUP \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:     \n
+\   seqno:    1 \n
+\   ackno:    0 \n
+\   myackno:  0 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\   flist_add: \n
+"
+PORT 0, SUBPORT 3: "
+\ dcem-macstats 0 3: \n
+\                DELTA                TOTAL DESCRIPTION \n
+\                    0                 9035 Tx frames len == 64 \n
+\                    0                  933 Tx frames 64 < len <= 127 \n
+\                    2               197449 Tx frames 128 <= len <= 255 \n
+\                    0                  103 Tx frames 256 <= len <= 511 \n
+\                    0                  101 Tx frames 512 <= len <= 1023 \n
+\                    0                  111 Tx frames 1024 <= len <= 1518 \n
+\                    0                  139 Tx frames 1519 <= len <= 2047 \n
+\                    2               207871 Tx total packets \n
+\                  400             39833372 Tx bytes \n
+\                    2               207871 Tx good packets \n
+\                    0                10397 Tx unicast frames \n
+\                    2               197370 Tx multicast frames \n
+\                    0                  104 Tx broadcast frames \n
+\                  153             10493331 Rx Frames 64 < len <= 127 \n
+\                    0                35405 Rx Frames 128 <= len <= 255 \n
+\                    2               155450 Rx Frames 256 <= len <= 511 \n
+\                    0                 5845 Rx Frames 512 <= len <= 1023 \n
+\                  155             10690031 Rx total received packets \n
+\                11972            829596173 Rx bytes \n
+\                  155             10690031 Rx good packets \n
+\                    0                13581 Rx unicast frames \n
+\                    0               117247 Rx multicast frames \n
+\                  155             10559203 Rx broadcast frames \n
+\                  400             39833372 Tx bytes for good packets \n
+\                11972            829596173 Rx bytes for good packets \n
+\              259.656bps                   Tx Rate \n
+\                7.772kbps                  Rx Rate \n
+"
+dcem-port 0 3: "
+\   uif :           0 \n
+\   port:           3 \n
+\   mac:            a4:93:4c:63:ea:b5 \n
+\   adminstate:     ENABLED \n
+\   operstate:      UP \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   1522 \n
+\   pausetype:      STD \n
+\   pausemap:       0x00 \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: UP, error: NONE, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 1 \n
+\   vasona total_an_fail: 0 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 0 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 1 \n
+\   vasona current_wait_count: 59 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 0 3: "
+\   uif:            0 \n
+\   port:           3 \n
+\   dcos_ifname:    \"eth0-3\" \n
+\   lldp_ifindex:   8 \n
+\   mac:            a4:93:4c:63:ea:b5 \n
+\   state:          RUNNING \n
+\   lldp_sock:      40 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee630 \n
+\   nivinfo:        \n
+\     mac:   8c:60:4f:bd:68:ac \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0xff \n
+\   flags:          ENABLED, LINKUP, PAUSE_PFC, DCBX_MTU, DCBX_NIV, VNTAG \n
+\   MTU Table:      [0]=9216, [1]=9216, [2]=9216, [3]=2158, [4]=9216, [5]=9216, [6]=9216, [7]=9216 \n
+"
+lldp-port 3: "
+\   portid:  3 \n
+\   state:   RUNNING \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX LINKUP \n
+\   peerttl: 120 \n
+\   timers:  REFRESHTIMER=160 RXINFOTTLTIMER=1029 \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b5 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=127, Len=110: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       0e 0c 00 00 80 00 10 00 a4 93 4c 63 ea ae 0a 05 \n
+\       00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 00 c0 \n
+\       01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 00 00 \n
+\       04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 00 0f \n
+\       00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\     Type=1, Len=7: 04 00 42 68 96 e3 13 \n
+\     Type=2, Len=10: 07 45 74 68 31 2f 31 2f 31 34 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=4, Len=14: 45 74 68 65 72 6e 65 74 31 2f 31 2f 31 34 \n
+\     Type=5, Len=21: \n
+\       76 69 63 66 77 2d 75 73 65 72 2d 75 63 73 34 30 \n
+\       67 2d 31 2d 41 \n
+\     Type=6, Len=165: \n
+\       43 69 73 63 6f 20 4e 65 78 75 73 20 4f 70 65 72 \n
+\       61 74 69 6e 67 20 53 79 73 74 65 6d 20 28 4e 58 \n
+\       2d 4f 53 29 20 53 6f 66 74 77 61 72 65 20 35 2e \n
+\       30 28 33 29 4e 32 28 33 2e 32 32 61 29 0a 54 41 \n
+\       43 20 73 75 70 70 6f 72 74 3a 20 68 74 74 70 3a \n
+\       2f 2f 77 77 77 2e 63 69 73 63 6f 2e 63 6f 6d 2f \n
+\       74 61 63 0a 43 6f 70 79 72 69 67 68 74 20 28 63 \n
+\       29 20 32 30 30 32 2d 32 30 31 37 2c 20 43 69 73 \n
+\       63 6f 20 53 79 73 74 65 6d 73 2c 20 49 6e 63 2e \n
+\       20 41 6c 6c 20 72 69 67 68 74 73 20 72 65 73 65 \n
+\       72 76 65 64 2e \n
+\     Type=7, Len=4: 00 04 00 04 \n
+\     Type=127, Len=103: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       06 05 00 00 80 00 ff 0a 05 00 00 80 00 08 10 14 \n
+\       00 00 80 00 24 00 24 00 24 00 08 6e 24 00 24 00 \n
+\       24 00 24 00 04 1c 00 00 80 00 0e 08 16 11 1c 0b \n
+\       00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 \n
+\       00 21 0e 0c 00 00 80 00 9f ff 8c 60 4f bd 68 ac \n
+\       0a 05 00 00 c0 01 02 \n
+\     Type=127, Len=4: 00 01 42 04 \n
+\     Type=127, Len=6: 00 80 c2 01 00 01 \n
+\   statistics: \n
+\     txframestotal:           27982 \n
+\     rxframestotal:           27989 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    27989 \n
+\     rxtlvsunrecognizedtotal: 27989 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 3: "
+\   portid:   3 \n
+\   state:    RUNNING \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:    LINKUP \n
+\   seqno:    1 \n
+\   ackno:    1 \n
+\   myackno:  1 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=7, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 10 00 a4 93 4c 63 ea ae  \n
+\       desiredcfg:  10 00 a4 93 4c 63 ea ae  \n
+\       peercfg:     9f ff 8c 60 4f bd 68 ac  \n
+\       localparamsflags: ENABLED ADVERTISE \n
+\       flags:            ENABLED OPERMODE SYNCD ADVERTISE OPERCFGDESIRED NEWPEERCFG \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     08  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:     24 00 24 00 24 00 08 6e 24 00 24 00 24 00 24 00  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     ff  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:     0e 08 16 11 1c 0b 00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 00 21  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\   flist_add: \n
+"
+dcem-macstats 1: "
+\                                     TOTAL DESCRIPTION \n
+\                                     14496 Tx frames len == 64 \n
+\                                         2 Tx frames 64 < len <= 127 \n
+\                                    231019 Tx frames 128 <= len <= 255 \n
+\                                         3 Tx frames 256 <= len <= 511 \n
+\                                         4 Tx frames 512 <= len <= 1023 \n
+\                                    245524 Tx total packets \n
+\                                  45239008 Tx bytes \n
+\                                    245524 Tx good packets \n
+\                                      8531 Tx unicast frames \n
+\                                    236982 Tx multicast frames \n
+\                                        11 Tx broadcast frames \n
+\                                    195153 Rx Frames 64 < len <= 127 \n
+\                                         1 Rx Frames 128 <= len <= 255 \n
+\                                     83968 Rx Frames 256 <= len <= 511 \n
+\                                         3 Rx Frames 512 <= len <= 1023 \n
+\                                    279125 Rx total received packets \n
+\                                  46319223 Rx bytes \n
+\                                    279125 Rx good packets \n
+\                                     14136 Rx unicast frames \n
+\                                    264989 Rx multicast frames \n
+\                                  45239008 Tx bytes for good packets \n
+\                                  46319223 Rx bytes for good packets \n
+\                0.000bps                   Tx Rate \n
+\                0.000bps                   Rx Rate \n
+"
+PORT 1, SUBPORT 0: "
+\ dcem-macstats 1 0: \n
+\                DELTA                TOTAL DESCRIPTION \n
+\                    1                27982 Tx frames 128 <= len <= 255 \n
+\                    1                27982 Tx total packets \n
+\                  172              4812874 Tx bytes \n
+\                    1                27982 Tx good packets \n
+\                    1                27982 Tx multicast frames \n
+\                    0                11309 Rx Frames 64 < len <= 127 \n
+\                    0                41984 Rx Frames 256 <= len <= 511 \n
+\                    0                53293 Rx total received packets \n
+\                    0             16412858 Rx bytes \n
+\                    0                53293 Rx good packets \n
+\                    0                11309 Rx unicast frames \n
+\                    0                41984 Rx multicast frames \n
+\                  172              4812874 Tx bytes for good packets \n
+\                    0             16412858 Rx bytes for good packets \n
+\              111.652bps                   Tx Rate \n
+"
+dcem-port 1 0: "
+\   uif :           1 \n
+\   port:           0 \n
+\   mac:            a4:93:4c:63:ea:b6 \n
+\   adminstate:     ENABLED \n
+\   operstate:      UP \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   9216 \n
+\   pausetype:      PFC \n
+\   pausemap:       0xff \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: UP, error: NONE, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 1 \n
+\   vasona total_an_fail: 1 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 0 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 1 \n
+\   vasona current_wait_count: 55 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 1 0: "
+\   uif:            1 \n
+\   port:           0 \n
+\   dcos_ifname:    \"eth1-0\" \n
+\   lldp_ifindex:   9 \n
+\   mac:            a4:93:4c:63:ea:b6 \n
+\   state:          RUNNING \n
+\   lldp_sock:      43 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee6c0 \n
+\   nivinfo:        \n
+\     mac:   8c:60:4f:bd:2c:d4 \n
+\     vers:  0 \n
+\     vntag: 1 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0xff \n
+\   flags:          ENABLED, LINKUP, PAUSE_PFC, DCBX_MTU, DCBX_NIV, VNTAG \n
+\   MTU Table:      [0]=9216, [1]=9216, [2]=9216, [3]=2158, [4]=9216, [5]=9216, [6]=9216, [7]=9216 \n
+"
+lldp-port 4: "
+\   portid:  4 \n
+\   state:   RUNNING \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX LINKUP \n
+\   peerttl: 120 \n
+\   timers:  REFRESHTIMER=182 RXINFOTTLTIMER=1057 \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b6 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=127, Len=110: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       0e 0c 00 00 80 00 10 01 a4 93 4c 63 ea af 0a 05 \n
+\       00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 00 c0 \n
+\       01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 00 00 \n
+\       04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 00 0f \n
+\       00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\     Type=1, Len=7: 04 00 42 68 96 ee 93 \n
+\     Type=2, Len=10: 07 45 74 68 31 2f 31 2f 31 34 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=4, Len=14: 45 74 68 65 72 6e 65 74 31 2f 31 2f 31 34 \n
+\     Type=5, Len=21: \n
+\       76 69 63 66 77 2d 75 73 65 72 2d 75 63 73 34 30 \n
+\       67 2d 31 2d 42 \n
+\     Type=6, Len=165: \n
+\       43 69 73 63 6f 20 4e 65 78 75 73 20 4f 70 65 72 \n
+\       61 74 69 6e 67 20 53 79 73 74 65 6d 20 28 4e 58 \n
+\       2d 4f 53 29 20 53 6f 66 74 77 61 72 65 20 35 2e \n
+\       30 28 33 29 4e 32 28 33 2e 32 32 61 29 0a 54 41 \n
+\       43 20 73 75 70 70 6f 72 74 3a 20 68 74 74 70 3a \n
+\       2f 2f 77 77 77 2e 63 69 73 63 6f 2e 63 6f 6d 2f \n
+\       74 61 63 0a 43 6f 70 79 72 69 67 68 74 20 28 63 \n
+\       29 20 32 30 30 32 2d 32 30 31 37 2c 20 43 69 73 \n
+\       63 6f 20 53 79 73 74 65 6d 73 2c 20 49 6e 63 2e \n
+\       20 41 6c 6c 20 72 69 67 68 74 73 20 72 65 73 65 \n
+\       72 76 65 64 2e \n
+\     Type=7, Len=4: 00 04 00 04 \n
+\     Type=127, Len=103: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       06 05 00 00 80 00 ff 0a 05 00 00 80 00 08 10 14 \n
+\       00 00 80 00 24 00 24 00 24 00 08 6e 24 00 24 00 \n
+\       24 00 24 00 04 1c 00 00 80 00 0e 08 16 11 1c 0b \n
+\       00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 \n
+\       00 21 0e 0c 00 00 80 00 9f ff 8c 60 4f bd 2c d4 \n
+\       0a 05 00 00 c0 01 02 \n
+\     Type=127, Len=4: 00 01 42 04 \n
+\     Type=127, Len=6: 00 80 c2 01 00 01 \n
+\   statistics: \n
+\     txframestotal:           27982 \n
+\     rxframestotal:           27989 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    27989 \n
+\     rxtlvsunrecognizedtotal: 27989 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 4: "
+\   portid:   4 \n
+\   state:    RUNNING \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:    LINKUP \n
+\   seqno:    1 \n
+\   ackno:    1 \n
+\   myackno:  1 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=7, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 10 01 a4 93 4c 63 ea af  \n
+\       desiredcfg:  10 01 a4 93 4c 63 ea af  \n
+\       peercfg:     9f ff 8c 60 4f bd 2c d4  \n
+\       localparamsflags: ENABLED ADVERTISE \n
+\       flags:            ENABLED OPERMODE SYNCD ADVERTISE OPERCFGDESIRED NEWPEERCFG \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     08  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:     24 00 24 00 24 00 08 6e 24 00 24 00 24 00 24 00  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     ff  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:     0e 08 16 11 1c 0b 00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 00 21  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\   flist_add: \n
+"
+PORT 1, SUBPORT 1: "
+\ dcem-macstats 1 1: \n
+\                                     TOTAL DESCRIPTION \n
+\                0.000bps                   Tx Rate \n
+\                0.000bps                   Rx Rate \n
+"
+dcem-port 1 1: "
+\   uif :           1 \n
+\   port:           1 \n
+\   mac:            a4:93:4c:63:ea:b7 \n
+\   adminstate:     ENABLED \n
+\   operstate:      DOWN \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   1522 \n
+\   pausetype:      STD \n
+\   pausemap:       0x00 \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: RESET, error: AN_FAILED, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 0 \n
+\   vasona total_an_fail: 258568 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 258568 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 0 \n
+\   vasona current_wait_count: 101 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 1 1: "
+\   uif:            1 \n
+\   port:           1 \n
+\   dcos_ifname:    \"eth1-1\" \n
+\   lldp_ifindex:   10 \n
+\   mac:            a4:93:4c:63:ea:b7 \n
+\   state:          WAIT_LINKUP \n
+\   lldp_sock:      46 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee700 \n
+\   nivinfo:        \n
+\     mac:   00:00:00:00:00:00 \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0x00 \n
+\   flags:          ENABLED \n
+\   MTU Table:      [0]=0, [1]=0, [2]=0, [3]=0, [4]=0, [5]=0, [6]=0, [7]=0 \n
+"
+lldp-port 5: "
+\   portid:  5 \n
+\   state:   WLINKUP \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX \n
+\   peerttl: 0 \n
+\   timers:  \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b7 \n
+\     Type=3, Len=2: 01 00 \n
+\     Type=127, Len=96: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 00 \n
+\       0a 05 00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 \n
+\       00 c0 01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 \n
+\       00 00 04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 \n
+\       00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\   statistics: \n
+\     txframestotal:           0 \n
+\     rxframestotal:           0 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    0 \n
+\     rxtlvsunrecognizedtotal: 0 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 5: "
+\   portid:   5 \n
+\   state:    WLINKUP \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:     \n
+\   seqno:    1 \n
+\   ackno:    0 \n
+\   myackno:  0 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\   flist_add: \n
+"
+PORT 1, SUBPORT 2: "
+\ dcem-macstats 1 2: \n
+\                DELTA                TOTAL DESCRIPTION \n
+\                    0                14496 Tx frames len == 64 \n
+\                    0                    2 Tx frames 64 < len <= 127 \n
+\                    3               203038 Tx frames 128 <= len <= 255 \n
+\                    0                    3 Tx frames 256 <= len <= 511 \n
+\                    0                    4 Tx frames 512 <= len <= 1023 \n
+\                    3               217543 Tx total packets \n
+\                  600             40426334 Tx bytes \n
+\                    3               217543 Tx good packets \n
+\                    0                 8531 Tx unicast frames \n
+\                    3               209001 Tx multicast frames \n
+\                    0                   11 Tx broadcast frames \n
+\                    3               183845 Rx Frames 64 < len <= 127 \n
+\                    0                    1 Rx Frames 128 <= len <= 255 \n
+\                    0                41984 Rx Frames 256 <= len <= 511 \n
+\                    0                    3 Rx Frames 512 <= len <= 1023 \n
+\                    3               225833 Rx total received packets \n
+\                  234             29906443 Rx bytes \n
+\                    3               225833 Rx good packets \n
+\                    0                 2827 Rx unicast frames \n
+\                    3               223006 Rx multicast frames \n
+\                  600             40426334 Tx bytes for good packets \n
+\                  234             29906443 Rx bytes for good packets \n
+\              389.326bps                   Tx Rate \n
+\              151.837bps                   Rx Rate \n
+"
+dcem-port 1 2: "
+\   uif :           1 \n
+\   port:           2 \n
+\   mac:            a4:93:4c:63:ea:b8 \n
+\   adminstate:     ENABLED \n
+\   operstate:      UP \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   1522 \n
+\   pausetype:      STD \n
+\   pausemap:       0x00 \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: UP, error: NONE, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 1 \n
+\   vasona total_an_fail: 0 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 0 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 1 \n
+\   vasona current_wait_count: 53 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 1 2: "
+\   uif:            1 \n
+\   port:           2 \n
+\   dcos_ifname:    \"eth1-2\" \n
+\   lldp_ifindex:   11 \n
+\   mac:            a4:93:4c:63:ea:b8 \n
+\   state:          RUNNING \n
+\   lldp_sock:      49 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee740 \n
+\   nivinfo:        \n
+\     mac:   8c:60:4f:bd:2c:d4 \n
+\     vers:  0 \n
+\     vntag: 1 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0xff \n
+\   flags:          ENABLED, LINKUP, PAUSE_PFC, DCBX_MTU, DCBX_NIV, VNTAG \n
+\   MTU Table:      [0]=9216, [1]=9216, [2]=9216, [3]=2158, [4]=9216, [5]=9216, [6]=9216, [7]=9216 \n
+"
+lldp-port 6: "
+\   portid:  6 \n
+\   state:   RUNNING \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX LINKUP \n
+\   peerttl: 120 \n
+\   timers:  REFRESHTIMER=143 RXINFOTTLTIMER=978 \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b8 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=127, Len=110: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       0e 0c 00 00 80 00 10 01 a4 93 4c 63 ea af 0a 05 \n
+\       00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 00 c0 \n
+\       01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 00 00 \n
+\       04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 00 0f \n
+\       00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\     Type=1, Len=7: 04 00 42 68 96 ee 95 \n
+\     Type=2, Len=10: 07 45 74 68 31 2f 31 2f 31 36 \n
+\     Type=3, Len=2: 00 78 \n
+\     Type=4, Len=14: 45 74 68 65 72 6e 65 74 31 2f 31 2f 31 36 \n
+\     Type=5, Len=21: \n
+\       76 69 63 66 77 2d 75 73 65 72 2d 75 63 73 34 30 \n
+\       67 2d 31 2d 42 \n
+\     Type=6, Len=165: \n
+\       43 69 73 63 6f 20 4e 65 78 75 73 20 4f 70 65 72 \n
+\       61 74 69 6e 67 20 53 79 73 74 65 6d 20 28 4e 58 \n
+\       2d 4f 53 29 20 53 6f 66 74 77 61 72 65 20 35 2e \n
+\       30 28 33 29 4e 32 28 33 2e 32 32 61 29 0a 54 41 \n
+\       43 20 73 75 70 70 6f 72 74 3a 20 68 74 74 70 3a \n
+\       2f 2f 77 77 77 2e 63 69 73 63 6f 2e 63 6f 6d 2f \n
+\       74 61 63 0a 43 6f 70 79 72 69 67 68 74 20 28 63 \n
+\       29 20 32 30 30 32 2d 32 30 31 37 2c 20 43 69 73 \n
+\       63 6f 20 53 79 73 74 65 6d 73 2c 20 49 6e 63 2e \n
+\       20 41 6c 6c 20 72 69 67 68 74 73 20 72 65 73 65 \n
+\       72 76 65 64 2e \n
+\     Type=7, Len=4: 00 04 00 04 \n
+\     Type=127, Len=103: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 01 \n
+\       06 05 00 00 80 00 ff 0a 05 00 00 80 00 08 10 14 \n
+\       00 00 80 00 24 00 24 00 24 00 08 6e 24 00 24 00 \n
+\       24 00 24 00 04 1c 00 00 80 00 0e 08 16 11 1c 0b \n
+\       00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 \n
+\       00 21 0e 0c 00 00 80 00 9f ff 8c 60 4f bd 2c d4 \n
+\       0a 05 00 00 c0 01 02 \n
+\     Type=127, Len=4: 00 01 42 04 \n
+\     Type=127, Len=6: 00 80 c2 01 00 01 \n
+\   statistics: \n
+\     txframestotal:           27982 \n
+\     rxframestotal:           27989 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    27989 \n
+\     rxtlvsunrecognizedtotal: 27989 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 6: "
+\   portid:   6 \n
+\   state:    RUNNING \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:    LINKUP \n
+\   seqno:    1 \n
+\   ackno:    1 \n
+\   myackno:  1 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=7, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 10 01 a4 93 4c 63 ea af  \n
+\       desiredcfg:  10 01 a4 93 4c 63 ea af  \n
+\       peercfg:     9f ff 8c 60 4f bd 2c d4  \n
+\       localparamsflags: ENABLED ADVERTISE \n
+\       flags:            ENABLED OPERMODE SYNCD ADVERTISE OPERCFGDESIRED NEWPEERCFG \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     08  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:     24 00 24 00 24 00 08 6e 24 00 24 00 24 00 24 00  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED SYNCD ADVERTISE OPERCFGDESIRED \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:     ff  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:     0e 08 16 11 1c 0b 00 00 00 22 20 64 40 64 60 64 80 64 a0 64 00 21 00 21  \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED OPERMODE SYNCD ADVERTISE \n
+\   flist_add: \n
+"
+PORT 1, SUBPORT 3: "
+\ dcem-macstats 1 3: \n
+\                                     TOTAL DESCRIPTION \n
+\                0.000bps                   Tx Rate \n
+\                0.000bps                   Rx Rate \n
+"
+dcem-port 1 3: "
+\   uif :           1 \n
+\   port:           3 \n
+\   mac:            a4:93:4c:63:ea:b9 \n
+\   adminstate:     ENABLED \n
+\   operstate:      DOWN \n
+\   linkdowncnt:    0 \n
+\   adminspeed:     4x10g \n
+\   maxframesize:   1522 \n
+\   pausetype:      STD \n
+\   pausemap:       0x00 \n
+\   xcvr_status:    NONE \n
+\   xcvr_flags:      \n
+\   vasona state: RESET, error: AN_FAILED, kr_mode: 0, speed: 10 \n
+\   vasona total_link_up: 0 \n
+\   vasona total_an_fail: 258569 \n
+\   vasona total_lt_fail: 0 \n
+\   vasona total_pcs_fail: 0 \n
+\   vasona an_fail_since_last_linkup: 258569 \n
+\   vasona lt_fail_since_last_linkup: 0 \n
+\   vasona pcs_fail_since_last_linkup: 0 \n
+\   vasona total_pcs_fifo_error: 0 \n
+\   vasona current_wait_count: 101 \n
+\    \n
+\   polling_disabled: 0 \n
+\    \n
+"
+uif 1 3: "
+\   uif:            1 \n
+\   port:           3 \n
+\   dcos_ifname:    \"eth1-3\" \n
+\   lldp_ifindex:   12 \n
+\   mac:            a4:93:4c:63:ea:b9 \n
+\   state:          WAIT_LINKUP \n
+\   lldp_sock:      52 \n
+\   vntag_sock:     0 \n
+\   timer:          0x5ee780 \n
+\   nivinfo:        \n
+\     mac:   00:00:00:00:00:00 \n
+\     vers:  0 \n
+\     vntag: 0 \n
+\   opts:           DCBX, JUMBO \n
+\   opt_pfcmap:     0xff \n
+\   pfc_primap:     0x00 \n
+\   flags:          ENABLED \n
+\   MTU Table:      [0]=0, [1]=0, [2]=0, [3]=0, [4]=0, [5]=0, [6]=0, [7]=0 \n
+"
+lldp-port 7: "
+\   portid:  7 \n
+\   state:   WLINKUP \n
+\   txtlv:    \n
+\   nfasttx: 0 \n
+\   flags:   FASTTX \n
+\   peerttl: 0 \n
+\   timers:  \n
+\   localdb: \n
+\     Type=1, Len=7: 04 a4 93 4c 63 ea ae \n
+\     Type=2, Len=7: 03 a4 93 4c 63 ea b9 \n
+\     Type=3, Len=2: 18 c7 \n
+\     Type=127, Len=96: \n
+\       00 1b 21 01 02 0a 00 00 00 00 00 01 00 00 00 00 \n
+\       0a 05 00 00 c0 00 00 10 14 00 00 c0 00 05 ee 05 \n
+\       ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 0c 05 00 \n
+\       00 c0 01 80 0c 05 00 00 c0 00 00 06 05 00 00 c0 \n
+\       00 00 04 1c 00 00 c0 00 64 00 00 00 00 00 00 00 \n
+\       00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00 \n
+\     Type=127, Len=6: 00 01 42 06 02 00 \n
+\   peerdb: \n
+\   statistics: \n
+\     txframestotal:           0 \n
+\     rxframestotal:           0 \n
+\     rxframesdiscardedtotal:  0 \n
+\     rxframeserrors:          0 \n
+\     rxframeswrongpeer:       0 \n
+\     rxtlvsdiscardedtotal:    0 \n
+\     rxtlvsunrecognizedtotal: 0 \n
+\     rxageoutstotal:          0 \n
+"
+dcbx-port 7: "
+\   portid:   7 \n
+\   state:    WLINKUP \n
+\   opervers: 0 \n
+\   maxvers:  0 \n
+\   flags:     \n
+\   seqno:    1 \n
+\   ackno:    0 \n
+\   myackno:  0 \n
+\   flist_lock:  0 \n
+\   flist: \n
+\     type=5, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=8, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       desiredcfg:  05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee 05 ee  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=1, seqno=1, opervers=0 \n
+\       localparams: 80  \n
+\       desiredcfg:  80  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=6, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=3, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 00  \n
+\       desiredcfg:  00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\     type=2, subtype=0, seqno=1, opervers=0 \n
+\       localparams: 64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       desiredcfg:  64 00 00 00 00 00 00 00 00 0f 00 0f 00 0e 00 0e 00 0e 00 0e 00 0e 08 00  \n
+\       peercfg:      \n
+\       localparamsflags: WILLING ENABLED ADVERTISE \n
+\       flags:            WILLING ENABLED ADVERTISE NEWDESIREDCFG \n
+\   flist_add: \n
+"
+dcem-env: "
+\   emu:         0x0 \n
+\   polltimer:   0x5ee4f0 \n
+\   polltime_us: 31250 \n
+\   nlinkcb:     1 \n
+\   Poll UIF:    1 \n
+\   Poll Port:   3 \n
+\   UIF count:   2 \n
+\   Ports per UIF: 4 \n
+"
+amp-env: "
+\        incalldb: 1 \n
+\       outcalldb: 0 \n
+\         program: 1 \n
+\             xid: 0x00000000 \n
+\      retx_timeo: 200 \n
+\       retx_tcap: 2000 \n
+\      retx_count: 12 \n
+\      incall_lim: 0 \n
+\        log2hold: 5 \n
+\           flags: SAVEREJECTS \n
+"
+vic-env: "
+\ env: { \n
+\   debugflags:  \n
+\   malloc_inuse: 10416 \n
+\   malloc_peak: 11644 \n
+\   mhdrlist: { \n
+\     [0x5f9ea4,  4952, VIC] \n
+\     [0x5f7054,   128, VIC] \n
+\     [0x5f70ec,   128, VIC] \n
+\     [0x5fb214,  4952, VIC] \n
+\     [0x5f71ec,   128, VIC] \n
+\     [0x5f7284,   128, VIC] \n
+\   } \n
+\ } \n
+"
+vif: "
+\ --------- ------ ------ ----- -------------------- ------ \n 
+\         vif                                    \n
+\ lif.uif index pri   hash state           flags \n
+\ --------- ------ ------ ----- -------------------- ------ \n
+\   2.0     243     0  243 UP              NIV, CREATED, VIFHASH, VUP, VIFINFO, DCXUP \n
+\   3.1     166     0  166 UP              NIV, CREATED, VIFHASH, VUP, VIFINFO, DCXUP \n
+"
+viflist: "
+\ flags key: I=Installed in tcam, O=on Overflow list \n
+\ ----- ------ ----- ------------------ \n
+\   id flags uif: lifs ()=masked \n
+\ ----- ------ ----- ------------------ \n
+\ 2899 I-      1: 1 \n
+\ 2982 I-      0: 2 \n
+\ 2990 I-      0: 0 \n
+\ 2991 I-      0: 2 \n
+\ 2992 I-      0: 2 \n
+\ viflist count: 5 \n
+"
+viflist_stats: "
+\            nviflists : 5 \n
+\          maxviflists : 9 \n
+\            noverflow : 0 \n
+\          maxoverflow : 0 \n
+"
+vnic: "
+\ vnic id        : internal id of vnic, use for other vnic cmds \n
+\ vnic name/mac  : ucsm provisioned name (-n) or mac address (-m) \n
+\ vnic type      : enet=ethernet, enet_pt=dynamic ethernet, fc=fcoe \n
+\ vnic host      : host \n
+\ vnic state     : state of vnic \n
+\ lif            : internal logical if id, use for other lif/vif cmds \n
+\ lif state      : state of lif \n
+\ vif uif        : bound uplink 0 or 1, =:primary, -:secondary, >:current \n
+\ vif ucsm       : ucsm id for this vif \n
+\ vif idx        : switch id for this vif \n
+\ vif vlan       : default vlan for traffic \n
+\ vif state      : state of vif \n
+\ -------------------------------------------------- ------------ ---------------------------------- \n
+\                v n i c                   l i f             v i f            \n
+\   id name           type    host state lif state uif  ucsm   idx vlan state  \n
+\ ----- ------------------ --------- ----- ------ ---- ------ ---- ------ ------ ----- ------ \n
+\   12 vnic_1         enet       0 UP      2 UP    =>0  5774   243  999 UP    \n
+\   13 vnic_2         enet       0 UP      3 UP    =>1  5775   166  999 UP    \n
+"
+vnic -l: "
+\ vnic id        : internal id of vnic, use for other vnic cmds \n
+\ vnic name/mac  : ucsm provisioned name (-n) or mac address (-m) \n
+\ vnic type      : enet=ethernet, enet_pt=dynamic ethernet, fc=fcoe \n
+\ vnic host      : host \n
+\ vnic state     : state of vnic \n
+\ lif            : internal logical if id, use for other lif/vif cmds \n
+\ lif state      : state of lif \n
+\ vif uif        : bound uplink 0 or 1, =:primary, -:secondary, >:current \n
+\ vif ucsm       : ucsm id for this vif \n
+\ vif idx        : switch id for this vif \n
+\ vif vlan       : default vlan for traffic \n
+\ vif state      : state of vif \n
+\ -------------------------------------------------- ------------ ---------------------------------- \n
+\                v n i c                   l i f             v i f            \n
+\   id name           type    host state lif state uif  ucsm   idx vlan state  \n
+\ ----- ------------------ --------- ----- ------ ---- ------ ---- ------ ------ ----- ------ \n
+"
+vnicl: "
+\               vnicid : 12 \n
+\                 name : vnic12 \n
+\                 type : enet \n
+\                state : UP \n
+\              adminst : UP \n
+\                flags : OPEN, INIT, LINKUP, NOTIFY_INIT, ENABLE, USING_DEVCMD2 \n
+\            ucsm name : vnic_1 \n
+\           spec_flags : BOOT, TRUNK \n
+\                 slot : 0 \n
+\                h:bdf : 0:03:00.0 \n
+\               vs.mac : 00:25:b5:02:01:10 \n
+\                  mac : 00:25:b5:02:01:10 \n
+\                vifid : 5774 \n
+\            vifcookie : 10143848 \n
+\                  uif : 0 \n
+\   portchannel_bypass : 0x0 \n
+\                  cos : 0 \n
+\                 vlan : 0 \n
+\           rate_limit : 0 \n
+\           stby_vifid : 0 \n
+\       stby_vifcookie : 0 \n
+\  stby_recovery_delay : 0 \n
+\              channel : 0 \n
+\        stdby_channel : 0 \n
+\              profile :  \n
+\        stdby_profile :  \n
+\           init_errno : 0 \n
+\                 rate : 4294967 \n
+\                  cdn :  \n
+\               mem_pa : 0x0 \n
+\               mem_sz : 0x0 \n
+\                 vnic : [12] (n=1) \n
+\                  lif : [2] (n=1) \n
+\              counter : [25] (n=1) \n
+\                   wq : [8] (n=1) \n
+\                   rq : [5] (n=1) \n
+\                   cq : [80-81] (n=2) \n
+\                 intr : [32-35] (n=4) \n
+\           devcmd2 wq : [10] (n=1) \n
+\              boot wq : [9] (n=1) \n
+\              boot rq : [6] (n=1) \n
+\              boot cq : [82-83] (n=2) \n
+\            boot intr : [36] (n=1) \n
+\             fltr gid : - \n
+\           counter id : - \n
+\ ================================ \n
+\               vnicid : 13 \n
+\                 name : vnic13 \n
+\                 type : enet \n
+\                state : UP \n
+\              adminst : UP \n
+\                flags : OPEN, INIT, LINKUP, ENABLE, USING_DEVCMD2 \n
+\            ucsm name : vnic_2 \n
+\           spec_flags : TRUNK \n
+\                 slot : 1 \n
+\                h:bdf : 0:04:00.0 \n
+\               vs.mac : 00:25:b5:02:01:11 \n
+\                  mac : 00:25:b5:02:01:11 \n
+\                vifid : 5775 \n
+\            vifcookie : 10143870 \n
+\                  uif : 1 \n
+\   portchannel_bypass : 0x0 \n
+\                  cos : 0 \n
+\                 vlan : 0 \n
+\           rate_limit : 0 \n
+\           stby_vifid : 0 \n
+\       stby_vifcookie : 0 \n
+\  stby_recovery_delay : 0 \n
+\              channel : 0 \n
+\        stdby_channel : 0 \n
+\              profile :  \n
+\        stdby_profile :  \n
+\           init_errno : 0 \n
+\                 rate : 4294967 \n
+\                  cdn :  \n
+\               mem_pa : 0x0 \n
+\               mem_sz : 0x0 \n
+\                 vnic : [13] (n=1) \n
+\                  lif : [3] (n=1) \n
+\              counter : [26] (n=1) \n
+\                   wq : [11] (n=1) \n
+\                   rq : [7] (n=1) \n
+\                   cq : [84-85] (n=2) \n
+\                 intr : [40-43] (n=4) \n
+\           devcmd2 wq : [12] (n=1) \n
+\             fltr gid : - \n
+\           counter id : - \n
+\ ================================ \n
+"
+vnicpci: "
+\ vnic id          : internal id of vnic, use for other vnic cmds \n
+\ vnic name        : ucsm provisioned name for this vnic \n
+\ vnic type        : pcie device id \n
+\ slt.f            : provisioned slot.function number \n
+\ logical h:bb:dd.f: pcie host:bus:dev.func relative to top bridge \n
+\ host bb:dd.f     : pcie bus:dev.func as viewed from host \n
+\ intr mode        : current host-selected interrupt mode (intx, msi, msix) \n
+\ rst              : number of device resets initiated from cfg space writes \n
+\ cfg rd/wr        : config space reads/writes handled by firmware \n
+\ bar rd/wr        : memory bar   reads/writes handled by firmware \n
+\ -------------------------------- ------------------------------------------ ---------------------------- \n
+\         v n i c                 logical   host   intr        cfg        bar     \n
+\   id name           type slt.f h:bb:dd.f bb:dd.f mode rst   rd/wr      rd/wr    \n
+\ ----- ------------------ ----- ------ ------------ --------- ----- ---- ------------- ------------- \n
+\   12 vnic_1         0043   0.0 0:03:00.0 85:00.0 msix   0   67/81       0/0     \n
+\   13 vnic_2         0043   1.0 0:04:00.0 86:00.0 msix   0   66/75       0/0     \n
+"
+vnicpcibr: "
+\ vnic id          : internal id of vnic, use for other vnic cmds \n
+\ vnic name        : ucsm provisioned name for this vnic \n
+\ vnic type        : pcie device id \n
+\ slt.f            : provisioned slot.function number \n
+\ logical h:bb:dd.f: pcie host:bus:dev.func relative to top bridge \n
+\ host bb:dd.f     : pcie bus:dev.func as viewed from host \n
+\ intr mode        : current host-selected interrupt mode (intx, msi, msix) \n
+\ rst              : number of device resets initiated from cfg space writes \n
+\ cfg rd/wr        : config space reads/writes handled by firmware \n
+\ bar rd/wr        : memory bar   reads/writes handled by firmware \n
+\ -------------------------------- ------------------------------------------ ---------------------------- \n
+\         v n i c                 logical   host   intr        cfg        bar     \n
+\   id name           type slt.f h:bb:dd.f bb:dd.f mode rst   rd/wr      rd/wr    \n
+\ ----- ------------------ ----- ------ ------------ --------- ----- ---- ------------- ------------- \n
+\   -1 br-0-00:00.0   0041  -1.0 0:00:00.0 82:00.0 intx   0   59/86       0/0     \n
+\   -1 br-0-01:00.0   0040  -1.0 0:01:00.0 83:00.0 intx   0   60/80       0/0     \n
+\   -1 br-0-02:00.0   0041  -1.0 0:02:00.0 84:00.0 intx   0   60/82       0/0     \n
+\   -1 br-0-02:01.0   0041  -1.0 0:02:01.0 84:01.0 intx   0   60/78       0/0     \n
+"
+vnicpci stats: "
+\           ioctl: 223 \n
+\ -------------------------- hid 0: \n
+\                        STATISTIC :              CURRENT                TOTAL \n
+\                           cfg_rd :                  372                  372 \n
+\                           cfg_wr :                  482                  482 \n
+\                           bar_wr :                  328                  328 \n
+\                           mac_up :                    0                    2 \n
+\                           mac_dn :                    0                    1 \n
+\                          link_up :                    1                    1 \n
+\                          bus_chg :                    1                    1 \n
+"
+vnicpci bars -l: "
+\  \n
+\ br-0-00:00.0                    : vnicid 0 host 0 bdf 00:00.0 pmvnich 0 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\   0    0    0 0x00000000fbe00000 0x00010000 mem64 0x00010000 -L      4     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000000        +0x00000000 0x00010000 rw-- 0x00002000             0/0 \n
+\  \n
+\ vnic12                          : vnicid 12 host 0 bdf 03:00.0 pmvnich 4 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\   0    2    1 0x00000000fbd10000 0x00008000 mem64 0x00001000 -L      8     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000002        +0x00000000 0x00000068 r---- 0x0951ff60             0/0 \n
+\    000003        +0x00001000 0x00000080 rw-- 0x15400400             0/0 \n
+\    000004        +0x00002000 0x00000080 rw-- 0x15000280             0/0 \n
+\    000005        +0x00003000 0x00000100 rw-- 0x150a2800             0/0 \n
+\    000006        +0x00004000 0x00000200 rw-- 0x15101000             0/0 \n
+\    000007        +0x00005000 0x00000004 r---- 0x1514e040             0/0 \n
+\    000008        +0x00006000 0x00000080 rw-- 0x15400500             0/0 \n
+\    000009        +0x00007000 0x00000080 rw-W devcmd                 0/164 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\   1    3    2 0x00000000fbd18000 0x00002000 mem64 0x00001000 ML      8     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000010        +0x00000000 0x00000040 rw-- 0x15140200             0/0 \n
+\    000011        +0x00001000 0x00000004 r---- 0x1514e040             0/0 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\   2    4    3 0x000000000000f000 0x00000080 io    0x00000080 -L      7     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000012        +0x00000000 0x00000080 rw-W devcmd                 0/0 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\ rom    1    4 0x00000000fbd00000 0x00010000 mem   0x00010000 --      1     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000001        +0x00000000 0x0000f800 r---- 0x09520000             0/0 \n
+\  \n
+\ vnic13                          : vnicid 13 host 0 bdf 04:00.0 pmvnich 5 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\   0    5    5 0x00000000fbc00000 0x00008000 mem64 0x00001000 -L      7     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000013        +0x00000000 0x00000068 r---- 0x0951edc0             0/0 \n
+\    000014        +0x00001000 0x00000080 rw-- 0x15400580             0/0 \n
+\    000015        +0x00002000 0x00000080 rw-- 0x15000380             0/0 \n
+\    000016        +0x00003000 0x00000100 rw-- 0x150a2a00             0/0 \n
+\    000017        +0x00004000 0x00000200 rw-- 0x15101400             0/0 \n
+\    000018        +0x00005000 0x00000004 r---- 0x1514e050             0/0 \n
+\    000019        +0x00006000 0x00000080 rw-- 0x15400600             0/0 \n
+\    000020        +0x00007000 0x00000080 rw-W devcmd                 0/164 \n
+\ bar barh bmti addr               size       type  brt_size   flag loads rd/wr \n
+\   1    6    6 0x00000000fbc08000 0x00002000 mem64 0x00001000 ML      7     0/0      \n
+\   +brti          +offset     size       perm type/vas/addr          reads/writes \n
+\    000021        +0x00000000 0x00000040 rw-- 0x15140280             0/0 \n
+\    000022        +0x00001000 0x00000004 r---- 0x1514e050             0/0 \n
+"
+vnicintr: "
+\ vnic             : internal id of vnic \n
+\ intrs            : intr base/count of intrs for this vnic \n
+\ mode             : current host-selected interrupt mode (intx, msi, msix) \n
+\ pin              : intX pin advertised in cfg space (A,B,C,D) \n
+\ line             : host-selected (BIOS) interrupt line in cfg space \n
+\ lpin             : legacy_pin set in interrupt control mregs (0,1,2,3) \n
+\ pba              : pending bit array (first 32 intrs) \n
+\ mask             : interrupt mask (first 32 intrs) \n
+\ int_credits      : sum of all int_credits \n
+\ ---------------------------------------------------------------------------------- \n
+\ vnic intrs    mode pin line lpin pba      mask     int_credits \n
+\ ----- ---------- ----- ---- ----- ----- ---------- ---------- -------------- \n
+\   12 32/4     msix   A   11    A 00000000 00000000 0 \n
+\   13 40/4     msix   A   10    B 00000000 0000000f 0 \n
+"
+res: "
+\ RESOURCE START   END COUNT OWNER \n
+\ vnic         0     0     1 ubervnic \n
+\ vnic         1     1     1 mnic0 \n
+\ vnic         2     2     1 mnic1 \n
+\ vnic         3     3     1 mnic2 \n
+\ vnic         4     4     1 mnic3 \n
+\ vnic         5     5     1 mnic4 \n
+\ vnic         6     6     1 mnic5 \n
+\ vnic         7     7     1 mnic6 \n
+\ vnic         8     8     1 mnic7 \n
+\ vnic         9     9     1 mnic8 \n
+\ vnic        10    10     1 mnic9 \n
+\ vnic        11    11     1 mnic10 \n
+\ vnic        12    12     1 vnic12 \n
+\ vnic        13    13     1 vnic13 \n
+\ lif          0     0     1 mnic0 \n
+\ lif          1     1     1 mnic1 \n
+\ lif          2     2     1 vnic12 \n
+\ lif          3     3     1 vnic13 \n
+\ lif        241   241     1 bmc \n
+\ lif        243   243     1 mnic2 \n
+\ lif        244   244     1 mnic3 \n
+\ lif        245   245     1 mnic4 \n
+\ lif        246   246     1 mnic5 \n
+\ lif        247   247     1 mnic6 \n
+\ lif        248   248     1 mnic7 \n
+\ lif        249   249     1 mnic8 \n
+\ lif        250   250     1 mnic9 \n
+\ lif        251   251     1 mnic10 \n
+\ lif        252   252     1 ecpu1 \n
+\ lif        253   253     1 ecpu2 \n
+\ wq           0     0     1 vnic_state \n
+\ wq           1     6     6 ubervnic \n
+\ wq           7     7     1 bmc \n
+\ wq           8    10     3 vnic12 \n
+\ wq          11    12     2 vnic13 \n
+\ wq        1013  1013     1 mnic10 \n
+\ wq        1014  1014     1 mnic9 \n
+\ wq        1015  1015     1 mnic8 \n
+\ wq        1016  1016     1 mnic7 \n
+\ wq        1017  1017     1 mnic6 \n
+\ wq        1018  1018     1 mnic5 \n
+\ wq        1019  1019     1 mnic4 \n
+\ wq        1020  1020     1 mnic3 \n
+\ wq        1021  1021     1 mnic2 \n
+\ wq        1022  1022     1 mnic1 \n
+\ wq        1023  1023     1 mnic0 \n
+\ rq           0     0     1 bmc \n
+\ rq           1     2     2 ecpu1 \n
+\ rq           3     4     2 ecpu2 \n
+\ rq           5     6     2 vnic12 \n
+\ rq           7     7     1 vnic13 \n
+\ rq        1012  1012     1 mnic10 \n
+\ rq        1013  1013     1 mnic9 \n
+\ rq        1014  1014     1 mnic8 \n
+\ rq        1015  1015     1 mnic7 \n
+\ rq        1016  1016     1 mnic6 \n
+\ rq        1017  1017     1 mnic5 \n
+\ rq        1018  1018     1 mnic4 \n
+\ rq        1019  1019     1 mnic3 \n
+\ rq        1020  1020     1 mnic2 \n
+\ rq        1021  1021     1 mnic1 \n
+\ rq        1022  1022     1 mnic0 \n
+\ rq        1023  1023     1 bmc \n
+\ cq           0    63    64 reserved \n
+\ cq          64    71     8 ecpu1 \n
+\ cq          72    79     8 ecpu2 \n
+\ cq          80    83     4 vnic12 \n
+\ cq          84    85     2 vnic13 \n
+\ cq        1000  1000     1 devcmd2 \n
+\ cq        1002  1003     2 mnic10 \n
+\ cq        1004  1005     2 mnic9 \n
+\ cq        1006  1007     2 mnic8 \n
+\ cq        1008  1009     2 mnic7 \n
+\ cq        1010  1011     2 mnic6 \n
+\ cq        1012  1013     2 mnic5 \n
+\ cq        1014  1015     2 mnic4 \n
+\ cq        1016  1017     2 mnic3 \n
+\ cq        1018  1019     2 mnic2 \n
+\ cq        1020  1021     2 mnic1 \n
+\ cq        1022  1023     2 mnic0 \n
+\ intr         0     0     1 devcmd2 \n
+\ intr         1     8     8 ecom_svc \n
+\ intr         9    18    10 ecpu1 \n
+\ intr        19    28    10 ecpu2 \n
+\ intr        32    39     8 vnic12 \n
+\ intr        40    43     4 vnic13 \n
+\ intr      1493  1493     1 mnic10 \n
+\ intr      1494  1494     1 mnic9 \n
+\ intr      1495  1495     1 mnic8 \n
+\ intr      1496  1496     1 mnic7 \n
+\ intr      1497  1497     1 mnic6 \n
+\ intr      1498  1498     1 mnic5 \n
+\ intr      1499  1499     1 mnic4 \n
+\ intr      1500  1500     1 mnic3 \n
+\ intr      1501  1501     1 mnic2 \n
+\ intr      1502  1502     1 mnic1 \n
+\ intr      1503  1503     1 mnic0 \n
+\ counter      0     0     1 ubervnic \n
+\ counter      1     1     1 mnic3 \n
+\ counter      2     2     1 mnic4 \n
+\ counter      3     3     1 mnic5 \n
+\ counter      4     4     1 mnic6 \n
+\ counter      5     5     1 mnic7 \n
+\ counter      6     6     1 mnic8 \n
+\ counter      7     7     1 mnic9 \n
+\ counter      8     8     1 mnic10 \n
+\ counter      9     9     1 mnic3 \n
+\ counter     10    10     1 mnic4 \n
+\ counter     11    11     1 mnic5 \n
+\ counter     12    12     1 mnic6 \n
+\ counter     13    13     1 mnic7 \n
+\ counter     14    14     1 mnic8 \n
+\ counter     15    15     1 mnic9 \n
+\ counter     16    16     1 mnic10 \n
+\ counter     17    17     1 mnic3 \n
+\ counter     18    18     1 mnic4 \n
+\ counter     19    19     1 mnic5 \n
+\ counter     20    20     1 mnic6 \n
+\ counter     21    21     1 mnic7 \n
+\ counter     22    22     1 mnic8 \n
+\ counter     23    23     1 mnic9 \n
+\ counter     24    24     1 mnic10 \n
+\ counter     25    25     1 vnic12 \n
+\ counter     26    26     1 vnic13 \n
+\ eg_ft        0     4     5 nfe \n
+\ ig_ft        0     4     5 nfe \n
+"
+lif: "
+\ ---- ----- ------------------------ ----- ------------ \n
+\ lif vnic state              vlan mac addr \n
+\ ---- ----- ------------------------ ----- ---------- \n
+\   2   12 UP                    0 00:25:b5:02:01:10 \n
+\                                0 ff:ff:ff:ff:ff:ff \n
+\                                0 33:33:00:00:00:01 \n
+\                                0 01:00:5e:00:00:01 \n
+\                                0 33:33:ff:02:01:10 \n
+\                                0 33:33:00:00:02:02 \n
+\                                0 01:80:c2:00:00:0e \n
+\                                0 01:80:c2:00:00:00 \n
+\                                0 01:80:c2:00:00:03 \n
+\   3   13 UP                 \n
+"
+res_intr: "
+\               nintrs 1536 \n
+\               nhosts 1 \n
+\           nhostparts 16 \n
+\          next_hostid 0 \n
+\ set  intr range  partmask host intx \n
+\ 0        0-1535  0xffff   0    ABCD \n
+\ ecpu     0-0     0x0000 \n
+"
+amp-stats: "
+\        rxframes: 17241 \n
+\         rxrunts: 0 \n
+\      rxbadproto: 0 \n
+\      rxtooshort: 0 \n
+\       rxtoolong: 0 \n
+\    rxbadprogram: 0 \n
+\    rxbadversion: 0 \n
+\       rxdupbusy: 0 \n
+\    rxduprereply: 0 \n
+\       rxnewbusy: 0 \n
+\         rxnomem: 0 \n
+\          rxcall: 17241 \n
+\         rxreply: 0 \n
+\        rxsignal: 0 \n
+\       rxbadtype: 0 \n
+\   rxreplynopeer: 0 \n
+\ rxreplywrongxid: 0 \n
+\     rxincalllim: 0 \n
+\       rxdiscard: 0 \n
+\  txpktallocfail: 0 \n
+\        txframes: 17290 \n
+\          txcall: 0 \n
+\         txreply: 17241 \n
+\        txsignal: 49 \n
+\     txcallretry: 0 \n
+\  txcalltimedout: 0 \n
+\  txinvalidreply: 0 \n
+"
+bmc_env: "
+\ nj_net_enable:  0 \n
+\ ncsi_enable:    0 \n
+\ bmc_amp_enable: 0 \n
+\ nchans:         0 \n
+\ bmc_res:        lifid=241, rq=1023, wq=7, uif=0 \n
+\ drop_rq:        0 \n
+\ slow_res:       rq=0, wq=0, cq=0, intr=0, uif=0 \n
+\ mgmt_mac:       00:00:00:00:00:00 \n
+\ fast_chan:      0 \n
+\ flags:           \n
+\ ucsm_niv:       0 \n
+"
+uptime: "
+\  17:59:47 up 9 days, 19:28,  load average: 0.32, 0.21, 0.16 \n
+\  \n
+"
+bmc_stats: "
+\                DELTA                TOTAL DESCRIPTION \n
+"
+bmc_lif: "
+\                lifid : 241 \n
+\           eg_cos_map : 0xfefefefefefefefe \n
+\          primary uif : 0 \n
+\              wq_base : 7 \n
+\             wq_count : 1 \n
+\              rq_base : 1023 \n
+\             rq_count : 1 \n
+\         vlan_rewrite : 1 \n
+\         default_vlan : ig: 0 eg: 0 \n
+\                addrs :  \n
+"
+bmc_vif: "
+\  \n
+"
+cfgblk: "
+\  \n
+"
+fwdtab-show: "
+\ # IDX  TYPE VLAN ADDRESS        | LIFS                | APD REGLIFS \n
+\     0: -000 4043 a493:4c63:eaaf | [1]                 | --D [] \n
+\     1: -000 4043 a493:4c63:eaae | [0]                 | --D [] \n
+\     2: -000 4043 ffff:ffff:ffff | [0,1]               | --D [] \n
+\     3: -000 4043 ALL MULTICAST  | []                  | --D [] \n
+\     4: -000 4043 -----:-----:----- | []                  | --D [] \n
+\   511: -000    0 0180:c200:000e | [0,1]               | --D [] \n
+\  1018: 1000    0 a493:4c63:eaaf | [1]                 | ---- [1] \n
+\  1019: 0000    0 a493:4c63:eaae | [0]                 | ---- [0] \n
+\  1020: 0000    0 ffff:ffff:ffff | [0]                 | ---- [0] \n
+\  1021: 1000    0 ffff:ffff:ffff | [1]                 | ---- [1] \n
+\  1022: -001 4043 -----:-----:----- | [0,1,243]           | --D [] \n
+\  1023: -001 ----- -----:-----:----- | [0-240,242-255]     | --D [] \n
+"
+vic_get_negotiation: "
+\ All VIC message types: \n
+\ vic0:                 Msg              AdapterVer           SwitchVer NegoVer NegotiatedReq \n
+\ vic0:                OPEN( 1)               [ 1 ]               [ 1 ]   [ 1 ] OPEN(1) \n
+\ vic0:               CLOSE( 2)               [ 1 ]               [ 1 ]   [ 1 ] UNKNOWN(0) \n
+\ vic0:       VIF_PROVISION( 3)                 [ ]                 [ ]     [ ] UNKNOWN(0) \n
+\ vic0:     VIF_DEPROVISION( 4)                 [ ]                 [ ]     [ ] UNKNOWN(0) \n
+\ vic0:          VIF_CREATE( 5)           [ 1 2 3 ]           [ 1 2 3 ] [ 1 2 ] CREATE2(4) \n
+\ vic0:          VIF_DELETE( 6)               [ 1 ]               [ 1 ]   [ 1 ] DELETE(5) \n
+\ vic0:          VIF_ENABLE( 7)               [ 1 ]               [ 1 ]   [ 1 ] ENABLE(6) \n
+\ vic0:         VIF_DISABLE( 8)               [ 1 ]               [ 1 ]   [ 1 ] DISABLE(7) \n
+\ vic0:             VIF_SET( 9)         [ 1 2 3 4 ]         [ 1 2 3 4 ]   [ 3 ] SET3(11) \n
+\ vic0:             VIF_GET(10)               [ 1 ]               [ 1 ]   [ 1 ] GET(12) \n
+\ vic0:        VIF_LIST_SET(11)               [ 1 ]               [ 1 ]   [ 1 ] VIF_LIST_SET(13) \n
+\ vic0:        VIF_LIST_GET(12)               [ 1 ]               [ 1 ]   [ 1 ] VIF_LIST_GET(14) \n
+\ vic0:        VIF_REGISTER(13)               [ 1 ]                 [ ]   [ 1 ] REGISTER(15) \n
+\ vic0:      VIF_DEREGISTER(14)               [ 1 ]                 [ ]   [ 1 ] DEREGISTER(16) \n
+\ vic0:        VIF_ACTIVATE(15)               [ 1 ]               [ 1 ]   [ 1 ] ACTIVATE(17) \n
+\ vic0:      VIF_DEACTIVATE(16)               [ 1 ]                 [ ]   [ 1 ] DEACTIVATE(18) \n
+\ vic0:         STATS_CLEAR(17)               [ 1 ]                 [ ]   [ 1 ] UNKNOWN(0) \n
+\ vic0:           STATS_GET(18)               [ 1 ]               [ 1 ]   [ 1 ] STATS_GET(19) \n
+\ vic0:                ENUM(19)               [ 1 ]               [ 1 ]   [ 1 ] ENUM(20) \n
+\ vic0:             RESTART(20)               [ 1 ]               [ 1 ]   [ 1 ] RESTART(21) \n
+\ vic0:    PORT_PROFILE_ADD(21)               [ 1 ]               [ 1 ]   [ 1 ] PORT_PROFILE_ADD(22) \n
+\ vic0:    PORT_PROFILE_DEL(22)               [ 1 ]               [ 1 ]   [ 1 ] PORT_PROFILE_DEL(23) \n
+\ vic0: EXT_STATS_ARRAY_GET(23)               [ 1 ]               [ 1 ]   [ 1 ] EXT_STATS_ARRAY_GET(24) \n
+\ vic0: VIF_PROVINFO_UPDATE(24)               [ 1 ]               [ 1 ]   [ 1 ] VIF_PROVINFO_UPDATE(25) \n
+\ vic1:                 Msg              AdapterVer           SwitchVer NegoVer NegotiatedReq \n
+\ vic1:                OPEN( 1)               [ 1 ]               [ 1 ]   [ 1 ] OPEN(1) \n
+\ vic1:               CLOSE( 2)               [ 1 ]               [ 1 ]   [ 1 ] UNKNOWN(0) \n
+\ vic1:       VIF_PROVISION( 3)                 [ ]                 [ ]     [ ] UNKNOWN(0) \n
+\ vic1:     VIF_DEPROVISION( 4)                 [ ]                 [ ]     [ ] UNKNOWN(0) \n
+\ vic1:          VIF_CREATE( 5)           [ 1 2 3 ]           [ 1 2 3 ] [ 1 2 ] CREATE2(4) \n
+\ vic1:          VIF_DELETE( 6)               [ 1 ]               [ 1 ]   [ 1 ] DELETE(5) \n
+\ vic1:          VIF_ENABLE( 7)               [ 1 ]               [ 1 ]   [ 1 ] ENABLE(6) \n
+\ vic1:         VIF_DISABLE( 8)               [ 1 ]               [ 1 ]   [ 1 ] DISABLE(7) \n
+\ vic1:             VIF_SET( 9)         [ 1 2 3 4 ]         [ 1 2 3 4 ]   [ 3 ] SET3(11) \n
+\ vic1:             VIF_GET(10)               [ 1 ]               [ 1 ]   [ 1 ] GET(12) \n
+\ vic1:        VIF_LIST_SET(11)               [ 1 ]               [ 1 ]   [ 1 ] VIF_LIST_SET(13) \n
+\ vic1:        VIF_LIST_GET(12)               [ 1 ]               [ 1 ]   [ 1 ] VIF_LIST_GET(14) \n
+\ vic1:        VIF_REGISTER(13)               [ 1 ]                 [ ]   [ 1 ] REGISTER(15) \n
+\ vic1:      VIF_DEREGISTER(14)               [ 1 ]                 [ ]   [ 1 ] DEREGISTER(16) \n
+\ vic1:        VIF_ACTIVATE(15)               [ 1 ]               [ 1 ]   [ 1 ] ACTIVATE(17) \n
+\ vic1:      VIF_DEACTIVATE(16)               [ 1 ]                 [ ]   [ 1 ] DEACTIVATE(18) \n
+\ vic1:         STATS_CLEAR(17)               [ 1 ]                 [ ]   [ 1 ] UNKNOWN(0) \n
+\ vic1:           STATS_GET(18)               [ 1 ]               [ 1 ]   [ 1 ] STATS_GET(19) \n
+\ vic1:                ENUM(19)               [ 1 ]               [ 1 ]   [ 1 ] ENUM(20) \n
+\ vic1:             RESTART(20)               [ 1 ]               [ 1 ]   [ 1 ] RESTART(21) \n
+\ vic1:    PORT_PROFILE_ADD(21)               [ 1 ]               [ 1 ]   [ 1 ] PORT_PROFILE_ADD(22) \n
+\ vic1:    PORT_PROFILE_DEL(22)               [ 1 ]               [ 1 ]   [ 1 ] PORT_PROFILE_DEL(23) \n
+\ vic1: EXT_STATS_ARRAY_GET(23)               [ 1 ]               [ 1 ]   [ 1 ] EXT_STATS_ARRAY_GET(24) \n
+\ vic1: VIF_PROVINFO_UPDATE(24)               [ 1 ]               [ 1 ]   [ 1 ] VIF_PROVINFO_UPDATE(25) \n
+"
+vic_get_negotiation 0: "
+\ Adapter VIC message types: \n
+\ vic0:                 Msg     AdapterVer \n
+\ vic0:                OPEN( 1) [ 1 ] \n
+\ vic0:               CLOSE( 2) [ 1 ] \n
+\ vic0:          VIF_CREATE( 5) [ 1 2 3 ] \n
+\ vic0:          VIF_DELETE( 6) [ 1 ] \n
+\ vic0:          VIF_ENABLE( 7) [ 1 ] \n
+\ vic0:         VIF_DISABLE( 8) [ 1 ] \n
+\ vic0:             VIF_SET( 9) [ 1 2 3 4 ] \n
+\ vic0:             VIF_GET(10) [ 1 ] \n
+\ vic0:        VIF_LIST_SET(11) [ 1 ] \n
+\ vic0:        VIF_LIST_GET(12) [ 1 ] \n
+\ vic0:        VIF_REGISTER(13) [ 1 ] \n
+\ vic0:      VIF_DEREGISTER(14) [ 1 ] \n
+\ vic0:        VIF_ACTIVATE(15) [ 1 ] \n
+\ vic0:      VIF_DEACTIVATE(16) [ 1 ] \n
+\ vic0:         STATS_CLEAR(17) [ 1 ] \n
+\ vic0:           STATS_GET(18) [ 1 ] \n
+\ vic0:                ENUM(19) [ 1 ] \n
+\ vic0:             RESTART(20) [ 1 ] \n
+\ vic0:    PORT_PROFILE_ADD(21) [ 1 ] \n
+\ vic0:    PORT_PROFILE_DEL(22) [ 1 ] \n
+\ vic0: EXT_STATS_ARRAY_GET(23) [ 1 ] \n
+\ vic0: VIF_PROVINFO_UPDATE(24) [ 1 ] \n
+\ vic1:                 Msg     AdapterVer \n
+\ vic1:                OPEN( 1) [ 1 ] \n
+\ vic1:               CLOSE( 2) [ 1 ] \n
+\ vic1:          VIF_CREATE( 5) [ 1 2 3 ] \n
+\ vic1:          VIF_DELETE( 6) [ 1 ] \n
+\ vic1:          VIF_ENABLE( 7) [ 1 ] \n
+\ vic1:         VIF_DISABLE( 8) [ 1 ] \n
+\ vic1:             VIF_SET( 9) [ 1 2 3 4 ] \n
+\ vic1:             VIF_GET(10) [ 1 ] \n
+\ vic1:        VIF_LIST_SET(11) [ 1 ] \n
+\ vic1:        VIF_LIST_GET(12) [ 1 ] \n
+\ vic1:        VIF_REGISTER(13) [ 1 ] \n
+\ vic1:      VIF_DEREGISTER(14) [ 1 ] \n
+\ vic1:        VIF_ACTIVATE(15) [ 1 ] \n
+\ vic1:      VIF_DEACTIVATE(16) [ 1 ] \n
+\ vic1:         STATS_CLEAR(17) [ 1 ] \n
+\ vic1:           STATS_GET(18) [ 1 ] \n
+\ vic1:                ENUM(19) [ 1 ] \n
+\ vic1:             RESTART(20) [ 1 ] \n
+\ vic1:    PORT_PROFILE_ADD(21) [ 1 ] \n
+\ vic1:    PORT_PROFILE_DEL(22) [ 1 ] \n
+\ vic1: EXT_STATS_ARRAY_GET(23) [ 1 ] \n
+\ vic1: VIF_PROVINFO_UPDATE(24) [ 1 ] \n
+"
+vic_get_negotiation 1: "
+\ Switch VIC message types: \n
+\ vic0:                 Msg     SwitchVer \n
+\ vic0:                OPEN( 1) [ 1 ] \n
+\ vic0:               CLOSE( 2) [ 1 ] \n
+\ vic0:          VIF_CREATE( 5) [ 1 2 3 ] \n
+\ vic0:          VIF_DELETE( 6) [ 1 ] \n
+\ vic0:          VIF_ENABLE( 7) [ 1 ] \n
+\ vic0:         VIF_DISABLE( 8) [ 1 ] \n
+\ vic0:             VIF_SET( 9) [ 1 2 3 4 ] \n
+\ vic0:             VIF_GET(10) [ 1 ] \n
+\ vic0:        VIF_LIST_SET(11) [ 1 ] \n
+\ vic0:        VIF_LIST_GET(12) [ 1 ] \n
+\ vic0:        VIF_ACTIVATE(15) [ 1 ] \n
+\ vic0:      VIF_DEACTIVATE(16) [ 1 ] \n
+\ vic0:        VIF_REGISTER(13) [ 1 ] \n
+\ vic0:      VIF_DEREGISTER(14) [ 1 ] \n
+\ vic0:           STATS_GET(18) [ 1 ] \n
+\ vic0:                ENUM(19) [ 1 ] \n
+\ vic0:             RESTART(20) [ 1 ] \n
+\ vic0:    PORT_PROFILE_ADD(21) [ 1 ] \n
+\ vic0:    PORT_PROFILE_DEL(22) [ 1 ] \n
+\ vic0: EXT_STATS_ARRAY_GET(23) [ 1 ] \n
+\ vic0: VIF_PROVINFO_UPDATE(24) [ 1 ] \n
+\ vic1:                 Msg     SwitchVer \n
+\ vic1:                OPEN( 1) [ 1 ] \n
+\ vic1:               CLOSE( 2) [ 1 ] \n
+\ vic1:          VIF_CREATE( 5) [ 1 2 3 ] \n
+\ vic1:          VIF_DELETE( 6) [ 1 ] \n
+\ vic1:          VIF_ENABLE( 7) [ 1 ] \n
+\ vic1:         VIF_DISABLE( 8) [ 1 ] \n
+\ vic1:             VIF_SET( 9) [ 1 2 3 4 ] \n
+\ vic1:             VIF_GET(10) [ 1 ] \n
+\ vic1:        VIF_LIST_SET(11) [ 1 ] \n
+\ vic1:        VIF_LIST_GET(12) [ 1 ] \n
+\ vic1:        VIF_ACTIVATE(15) [ 1 ] \n
+\ vic1:      VIF_DEACTIVATE(16) [ 1 ] \n
+\ vic1:        VIF_REGISTER(13) [ 1 ] \n
+\ vic1:      VIF_DEREGISTER(14) [ 1 ] \n
+\ vic1:           STATS_GET(18) [ 1 ] \n
+\ vic1:                ENUM(19) [ 1 ] \n
+\ vic1:             RESTART(20) [ 1 ] \n
+\ vic1:    PORT_PROFILE_ADD(21) [ 1 ] \n
+\ vic1:    PORT_PROFILE_DEL(22) [ 1 ] \n
+\ vic1: EXT_STATS_ARRAY_GET(23) [ 1 ] \n
+\ vic1: VIF_PROVINFO_UPDATE(24) [ 1 ] \n
+"
+vic_get_negotiation 2: "
+\ Negotiated VIC message types: \n
+\ vic0:                 Msg     NegotiatedVer \n
+\ vic0:                OPEN( 1) [ 1 ] \n
+\ vic0:               CLOSE( 2) [ 1 ] \n
+\ vic0:       VIF_PROVISION( 3) [ ] \n
+\ vic0:     VIF_DEPROVISION( 4) [ ] \n
+\ vic0:          VIF_CREATE( 5) [ 1 2 ] \n
+\ vic0:          VIF_DELETE( 6) [ 1 ] \n
+\ vic0:          VIF_ENABLE( 7) [ 1 ] \n
+\ vic0:         VIF_DISABLE( 8) [ 1 ] \n
+\ vic0:             VIF_SET( 9) [ 3 ] \n
+\ vic0:             VIF_GET(10) [ 1 ] \n
+\ vic0:        VIF_LIST_SET(11) [ 1 ] \n
+\ vic0:        VIF_LIST_GET(12) [ 1 ] \n
+\ vic0:        VIF_REGISTER(13) [ 1 ] \n
+\ vic0:      VIF_DEREGISTER(14) [ 1 ] \n
+\ vic0:        VIF_ACTIVATE(15) [ 1 ] \n
+\ vic0:      VIF_DEACTIVATE(16) [ 1 ] \n
+\ vic0:         STATS_CLEAR(17) [ 1 ] \n
+\ vic0:           STATS_GET(18) [ 1 ] \n
+\ vic0:                ENUM(19) [ 1 ] \n
+\ vic0:             RESTART(20) [ 1 ] \n
+\ vic0:    PORT_PROFILE_ADD(21) [ 1 ] \n
+\ vic0:    PORT_PROFILE_DEL(22) [ 1 ] \n
+\ vic0: EXT_STATS_ARRAY_GET(23) [ 1 ] \n
+\ vic0: VIF_PROVINFO_UPDATE(24) [ 1 ] \n
+\ vic1:                 Msg     NegotiatedVer \n
+\ vic1:                OPEN( 1) [ 1 ] \n
+\ vic1:               CLOSE( 2) [ 1 ] \n
+\ vic1:       VIF_PROVISION( 3) [ ] \n
+\ vic1:     VIF_DEPROVISION( 4) [ ] \n
+\ vic1:          VIF_CREATE( 5) [ 1 2 ] \n
+\ vic1:          VIF_DELETE( 6) [ 1 ] \n
+\ vic1:          VIF_ENABLE( 7) [ 1 ] \n
+\ vic1:         VIF_DISABLE( 8) [ 1 ] \n
+\ vic1:             VIF_SET( 9) [ 3 ] \n
+\ vic1:             VIF_GET(10) [ 1 ] \n
+\ vic1:        VIF_LIST_SET(11) [ 1 ] \n
+\ vic1:        VIF_LIST_GET(12) [ 1 ] \n
+\ vic1:        VIF_REGISTER(13) [ 1 ] \n
+\ vic1:      VIF_DEREGISTER(14) [ 1 ] \n
+\ vic1:        VIF_ACTIVATE(15) [ 1 ] \n
+\ vic1:      VIF_DEACTIVATE(16) [ 1 ] \n
+\ vic1:         STATS_CLEAR(17) [ 1 ] \n
+\ vic1:           STATS_GET(18) [ 1 ] \n
+\ vic1:                ENUM(19) [ 1 ] \n
+\ vic1:             RESTART(20) [ 1 ] \n
+\ vic1:    PORT_PROFILE_ADD(21) [ 1 ] \n
+\ vic1:    PORT_PROFILE_DEL(22) [ 1 ] \n
+\ vic1: EXT_STATS_ARRAY_GET(23) [ 1 ] \n
+\ vic1: VIF_PROVINFO_UPDATE(24) [ 1 ] \n
+"
+vic_get_negotiation 3: "
+\ Negotiated VIC request types: \n
+\ vic0:                 Msg     NegotiatedReq \n
+\ vic0:                OPEN( 1) OPEN(1) \n
+\ vic0:               CLOSE( 2) UNKNOWN(0) \n
+\ vic0:       VIF_PROVISION( 3) UNKNOWN(0) \n
+\ vic0:     VIF_DEPROVISION( 4) UNKNOWN(0) \n
+\ vic0:          VIF_CREATE( 5) CREATE2(4) \n
+\ vic0:          VIF_DELETE( 6) DELETE(5) \n
+\ vic0:          VIF_ENABLE( 7) ENABLE(6) \n
+\ vic0:         VIF_DISABLE( 8) DISABLE(7) \n
+\ vic0:             VIF_SET( 9) SET3(11) \n
+\ vic0:             VIF_GET(10) GET(12) \n
+\ vic0:        VIF_LIST_SET(11) VIF_LIST_SET(13) \n
+\ vic0:        VIF_LIST_GET(12) VIF_LIST_GET(14) \n
+\ vic0:        VIF_REGISTER(13) REGISTER(15) \n
+\ vic0:      VIF_DEREGISTER(14) DEREGISTER(16) \n
+\ vic0:        VIF_ACTIVATE(15) ACTIVATE(17) \n
+\ vic0:      VIF_DEACTIVATE(16) DEACTIVATE(18) \n
+\ vic0:         STATS_CLEAR(17) UNKNOWN(0) \n
+\ vic0:           STATS_GET(18) STATS_GET(19) \n
+\ vic0:                ENUM(19) ENUM(20) \n
+\ vic0:             RESTART(20) RESTART(21) \n
+\ vic0:    PORT_PROFILE_ADD(21) PORT_PROFILE_ADD(22) \n
+\ vic0:    PORT_PROFILE_DEL(22) PORT_PROFILE_DEL(23) \n
+\ vic0: EXT_STATS_ARRAY_GET(23) EXT_STATS_ARRAY_GET(24) \n
+\ vic0: VIF_PROVINFO_UPDATE(24) VIF_PROVINFO_UPDATE(25) \n
+\ vic1:                 Msg     NegotiatedReq \n
+\ vic1:                OPEN( 1) OPEN(1) \n
+\ vic1:               CLOSE( 2) UNKNOWN(0) \n
+\ vic1:       VIF_PROVISION( 3) UNKNOWN(0) \n
+\ vic1:     VIF_DEPROVISION( 4) UNKNOWN(0) \n
+\ vic1:          VIF_CREATE( 5) CREATE2(4) \n
+\ vic1:          VIF_DELETE( 6) DELETE(5) \n
+\ vic1:          VIF_ENABLE( 7) ENABLE(6) \n
+\ vic1:         VIF_DISABLE( 8) DISABLE(7) \n
+\ vic1:             VIF_SET( 9) SET3(11) \n
+\ vic1:             VIF_GET(10) GET(12) \n
+\ vic1:        VIF_LIST_SET(11) VIF_LIST_SET(13) \n
+\ vic1:        VIF_LIST_GET(12) VIF_LIST_GET(14) \n
+\ vic1:        VIF_REGISTER(13) REGISTER(15) \n
+\ vic1:      VIF_DEREGISTER(14) DEREGISTER(16) \n
+\ vic1:        VIF_ACTIVATE(15) ACTIVATE(17) \n
+\ vic1:      VIF_DEACTIVATE(16) DEACTIVATE(18) \n
+\ vic1:         STATS_CLEAR(17) UNKNOWN(0) \n
+\ vic1:           STATS_GET(18) STATS_GET(19) \n
+\ vic1:                ENUM(19) ENUM(20) \n
+\ vic1:             RESTART(20) RESTART(21) \n
+\ vic1:    PORT_PROFILE_ADD(21) PORT_PROFILE_ADD(22) \n
+\ vic1:    PORT_PROFILE_DEL(22) PORT_PROFILE_DEL(23) \n
+\ vic1: EXT_STATS_ARRAY_GET(23) EXT_STATS_ARRAY_GET(24) \n
+\ vic1: VIF_PROVINFO_UPDATE(24) VIF_PROVINFO_UPDATE(25) \n
+"
+iscsi_get_config: "
+\  \n
+\ vnic iSCSI Configuration:  \n
+\ ------------------------------------- \n
+"
+iscsi_show_ibft all: "
+\  \n
+\ vnic iSCSI iBFT Details:  \n
+\ ------------------------------------- \n
+\ all: vnic not found \n
+"
+uifportstatus: "
+\       ASIC                                        Port 4x10G 2x10G 1x10G  IOM \n
+\   UIF Port State         Tx Rate         Rx Rate Speed   IOM   IOM   IOM Port \n
+\   0   0    DOWN        0.000bps        0.000bps  4x10g  HI+0                3 \n
+\   0   1    UP          0.000bps        6.921kbps 4x10g  HI+1  HI+0          2 \n
+\   0   2    DOWN        0.000bps        0.000bps  4x10g  HI+2                1 \n
+\   0   3    UP        259.362bps        7.595kbps 4x10g  HI+3  HI+2  HI+0    0 \n
+\   1   0    UP          0.000bps        0.000bps  4x10g  HI+3  HI+2  HI+0    0 \n
+\   1   1    DOWN        0.000bps        0.000bps  4x10g  HI+2                1 \n
+\   1   2    UP        259.363bps      101.151bps  4x10g  HI+1  HI+0          2 \n
+\   1   3    DOWN        0.000bps        0.000bps  4x10g  HI+0                3 \n
+"
+palotool-stats: "
+\ ADAPTER_PING                 v0 last rpl 180413-17:55:55.343640 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETEXTDATA           v0 last rpl 180403-22:24:24.011471 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETEVENTS            v0 last rpl 180403-22:25:20.698037 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_IDENTIFY             v0 last rpl 180413-17:59:25.480451 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIME              v0 last rpl 180413-17:15:56.578182 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIMEZONE          v0 last rpl 180403-21:49:06.492440 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETFWINVENTORY       v0 last rpl 180403-22:35:56.200605 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETIPPARAMS          v0 last rpl 180403-21:49:06.433554 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETIPPARAMS          v0 last rpl 180413-17:59:25.481435 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETIDENTITYINFO      v0 last rpl 180403-21:49:06.285609 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETTECHSUPPORT       v0 last rpl 180413-17:59:25.491762 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE          v0 last rpl 180413-17:55:55.345125 SUCCESS     if=eth0.4043 \n
+\ PALO_VNIC_GETVNIC            v0 last rpl 180403-22:24:20.228326 SUCCESS     if=eth0.4043 \n
+\ PALO_VNIC_LISTVNICS          v0 last rpl 180403-22:24:20.224528 SUCCESS     if=eth0.4043 \n
+\ PALO_VNIC_GET_ALLHOSTBDFS    v0 last rpl 180403-22:24:24.011011 SUCCESS     if=eth0.4043 \n
+"
+palotool-trace: "
+\ 17234 msgs since last reboot, print last 400 msgs \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:30:56.102493 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:30:56.102979 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-12:35:52.211772 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:35:52.212268 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:35:52.212781 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-12:35:55.946935 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:35:55.947421 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:35:55.947926 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-12:40:52.039360 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:40:52.039918 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:40:52.040364 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-12:40:55.787443 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:40:55.787941 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:40:55.788416 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-12:45:51.890312 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:45:51.890871 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:45:51.891314 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-12:45:55.626475 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:45:55.626819 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:45:55.627288 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-12:50:51.723418 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:50:51.723974 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:50:51.724424 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-12:50:55.509445 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:50:55.509942 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:50:55.510929 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-12:55:51.569354 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:55:51.569909 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-12:55:51.570354 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-12:55:55.317546 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:55:55.318048 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-12:55:55.318539 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:00:51.407526 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:00:51.408054 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:00:51.408530 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:00:55.152094 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:00:55.152596 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:00:55.153087 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:05:51.260216 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:05:51.260779 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:05:51.261224 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:05:55.000710 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:05:55.001204 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:05:55.001695 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:10:51.097188 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:10:51.097718 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:10:51.098192 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:10:54.837938 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:10:54.838410 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:10:54.838921 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:15:50.938444 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:15:50.938977 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:15:50.939448 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:15:54.680956 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIME    v0 180413-13:15:56.577635 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:15:56.578152 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:15:56.578649 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:20:52.674057 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:20:52.674559 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:20:52.675065 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:20:56.417013 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:20:56.417475 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:20:56.417994 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:25:52.523593 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:25:52.524149 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:25:52.524596 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:25:56.260804 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:25:56.261287 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:25:56.261776 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:30:52.358572 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:30:52.359127 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:30:52.359573 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:30:56.103730 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:30:56.104168 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:30:56.104637 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:35:52.201247 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:35:52.201775 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:35:52.202250 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:35:55.942324 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:35:55.942808 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:35:55.943293 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:40:52.030953 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:40:52.031482 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:40:52.031956 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:40:55.788811 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:40:55.789308 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:40:55.789798 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:45:51.881759 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:45:51.882289 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:45:51.882765 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:45:55.625172 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:45:55.625676 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:45:55.626163 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:50:51.731112 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:50:51.731617 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:50:51.732126 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:50:55.468309 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:50:55.468811 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:50:55.469299 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-13:55:51.567695 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:55:51.568219 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-13:55:51.568696 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-13:55:55.310400 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:55:55.310908 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-13:55:55.311394 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:00:51.410478 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:00:51.411050 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:00:51.411495 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:00:55.150776 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:00:55.151261 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:00:55.151751 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:05:51.252402 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:05:51.252927 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:05:51.253402 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:05:55.081329 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:05:55.081814 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:05:55.082795 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:10:51.094934 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:10:51.095461 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:10:51.095934 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:10:54.839709 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:10:54.840193 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:10:54.840683 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:15:50.936442 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:15:50.937005 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:15:50.937445 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:15:54.688890 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIME    v0 180413-14:15:56.585620 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:15:56.586139 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:15:56.586632 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:20:52.676792 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:20:52.677362 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:20:52.677804 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:20:56.424933 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:20:56.425437 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:20:56.425924 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:25:52.513326 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:25:52.513829 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:25:52.514336 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:25:56.256379 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:25:56.256847 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:25:56.257371 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:30:52.355951 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:30:52.356478 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:30:52.356953 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:30:56.113004 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:30:56.113503 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:30:56.113994 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:35:52.197771 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:35:52.198337 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:35:52.198778 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:35:55.946741 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:35:55.947272 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:35:55.947729 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:40:52.044646 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:40:52.045178 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:40:52.045653 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:40:55.784887 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:40:55.785409 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:40:55.785871 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:45:51.884202 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:45:51.884739 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:45:51.885215 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:45:55.649138 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:45:55.649630 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:45:55.650121 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:50:51.727333 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:50:51.727812 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:50:51.728317 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:50:55.468056 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:50:55.468549 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:50:55.469038 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-14:55:51.579549 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:55:51.580051 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-14:55:51.580523 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-14:55:55.310609 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:55:55.311106 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-14:55:55.311593 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:00:51.410205 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:00:51.410735 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:00:51.411209 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:00:55.153829 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:00:55.154342 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:00:55.154801 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:05:51.252973 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:05:51.253501 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:05:51.253977 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:05:55.159226 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:05:55.159702 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:05:55.160192 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:10:51.091282 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:10:51.091776 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:10:51.092279 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:10:54.934464 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:10:54.934936 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:10:54.935423 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:15:50.941768 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:15:50.942335 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:15:50.942772 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:15:54.679316 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIME    v0 180413-15:15:56.576216 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:15:56.576757 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:15:56.577229 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:20:52.672120 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:20:52.672648 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:20:52.673118 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:20:56.486023 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:20:56.486521 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:20:56.487502 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:25:52.514878 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:25:52.515388 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:25:52.515884 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:25:56.257325 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:25:56.257839 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:25:56.258295 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:30:52.354790 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:30:52.355290 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:30:52.355792 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:30:56.102600 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:30:56.103096 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:30:56.103585 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:35:52.201275 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:35:52.201835 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:35:52.202279 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:35:56.043932 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:35:56.044424 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:35:56.044909 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:40:52.054527 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:40:52.055037 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:40:52.055514 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:40:55.782515 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:40:55.783014 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:40:55.783504 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:45:51.884552 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:45:51.885083 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:45:51.885554 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:45:55.685799 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:45:55.686257 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:45:55.686772 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:50:51.724446 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:50:51.724970 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:50:51.725446 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:50:55.473784 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:50:55.474168 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:50:55.474652 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-15:55:51.566098 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:55:51.566633 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-15:55:51.567106 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-15:55:55.315103 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:55:55.315608 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-15:55:55.316096 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:00:51.409393 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:00:51.409946 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:00:51.410400 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:00:55.159478 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:00:55.159982 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:00:55.160474 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:05:51.249526 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:05:51.250051 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:05:51.250524 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:05:55.007238 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:05:55.007779 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:05:55.008238 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:10:51.093882 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:10:51.094398 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:10:51.094896 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:10:54.835461 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:10:54.835946 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:10:54.836436 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:15:50.930207 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:15:50.930780 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:15:50.931214 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:15:54.676888 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIME    v0 180413-16:15:56.573643 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:15:56.574177 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:15:56.574655 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:20:52.675537 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:20:52.676099 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:20:52.676542 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:20:56.417146 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:20:56.417616 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:20:56.418135 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:25:52.516419 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:25:52.516950 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:25:52.517424 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:25:56.257744 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:25:56.258240 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:25:56.258731 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:30:52.358413 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:30:52.358941 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:30:52.359413 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:30:56.101705 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:30:56.102151 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:30:56.102603 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:35:52.208824 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:35:52.209357 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:35:52.209832 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:35:55.951546 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:35:55.951961 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:35:55.952444 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:40:52.041133 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:40:52.041638 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:40:52.042141 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:40:55.785074 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:40:55.785527 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:40:55.786048 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:45:51.885436 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:45:51.885970 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:45:51.886443 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:45:55.649608 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:45:55.650119 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:45:55.650577 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:50:51.723482 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:50:51.724044 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:50:51.724485 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:50:55.466889 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:50:55.467369 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:50:55.467860 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-16:55:51.566519 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:55:51.567088 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-16:55:51.567519 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-16:55:55.309442 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:55:55.309922 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-16:55:55.310409 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:00:51.411425 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:00:51.411958 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:00:51.412428 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:00:55.150767 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:00:55.151263 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:00:55.151755 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:05:51.250870 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:05:51.251399 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:05:51.251878 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:05:55.047165 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:05:55.047621 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:05:55.048603 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:10:51.093199 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:10:51.093722 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:10:51.094210 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:10:54.895574 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:10:54.896102 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:10:54.896562 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:15:50.935509 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:15:50.936306 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:15:50.936685 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:15:54.681439 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_SETTIME    v0 180413-17:15:56.578182 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:15:56.578696 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:15:56.579194 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:20:52.674603 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:20:52.675137 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:20:52.675610 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:20:56.416696 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:20:56.417165 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:20:56.417650 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:25:52.513619 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:25:52.514150 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:25:52.514625 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:25:56.257599 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:25:56.258081 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:25:56.258566 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:30:52.356924 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:30:52.357481 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:30:52.357929 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:30:56.118768 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:30:56.119269 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:30:56.119758 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:35:52.198176 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:35:52.198705 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:35:52.199180 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:35:55.944813 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:35:55.945339 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:35:55.945796 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:40:52.041068 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:40:52.041603 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:40:52.042077 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:40:55.862900 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:40:55.863433 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:40:55.864404 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:45:51.906069 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:45:51.906587 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:45:51.907062 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:45:55.677941 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:45:55.678467 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:45:55.679446 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:50:51.716703 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:50:51.717232 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:50:51.717703 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:50:55.466960 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:50:55.467475 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:50:55.467947 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_PING       v0 180413-17:55:51.568408 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:55:51.568917 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:55:51.569419 SUCCESS     if=eth1.4043 \n
+\ ADAPTER_PING       v0 180413-17:55:55.343640 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:55:55.344143 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETVIFSTATE v0 180413-17:55:55.345125 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_IDENTIFY   v0 180413-17:59:25.480451 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETIPPARAMS v0 180413-17:59:25.480981 SUCCESS     if=eth0.4043 \n
+\ ADAPTER_GETIPPARAMS v0 180413-17:59:25.481435 SUCCESS     if=eth0.4043 \n
+"
+clsf-showtbl: "
+\  \n
+\ TABLE=0 LIFs: 0 1  \n
+\ ------------------------------------------------------------------ \n
+\ HW_ID TBLID LIF PARS_RESB L2+12[12]                \n
+\ ------------------------------------------------------------------ \n
+\     0     0   0 00-00000  8926----------8100-----88cc COUNTER=1[0 : 0]  RQ=1019  \n
+\     1     0   0 00-00001  8926----------8100-----88cc COUNTER=2[1 : 396]  RQ=1018  \n
+\     2     0   0 00-00002  8926----------8100-----88cc COUNTER=3[0 : 0]  RQ=1017  \n
+\     3     0   0 00-00003  8926----------8100-----88cc COUNTER=4[0 : 0]  RQ=1016  \n
+\     4     0   0 00-00100  8926----------8100-----88cc COUNTER=5[0 : 0]  RQ=1015  \n
+\     5     0   0 00-00101  8926----------8100-----88cc COUNTER=6[0 : 0]  RQ=1014  \n
+\     6     0   0 00-00102  8926----------8100-----88cc COUNTER=7[0 : 0]  RQ=1013  \n
+\     7     0   0 00-00103  8926----------8100-----88cc COUNTER=8[0 : 0]  RQ=1012  \n
+\     8     0   0 00-00000  8926----------88cc---------- COUNTER=9[0 : 0]  RQ=1019  \n
+\     9     0   0 00-00001  8926----------88cc---------- COUNTER=10[0 : 0]  RQ=1018  \n
+\    10     0   0 00-00002  8926----------88cc---------- COUNTER=11[0 : 0]  RQ=1017  \n
+\    11     0   0 00-00003  8926----------88cc---------- COUNTER=12[0 : 0]  RQ=1016  \n
+\    12     0   0 00-00100  8926----------88cc---------- COUNTER=13[0 : 0]  RQ=1015  \n
+\    13     0   0 00-00101  8926----------88cc---------- COUNTER=14[0 : 0]  RQ=1014  \n
+\    14     0   0 00-00102  8926----------88cc---------- COUNTER=15[0 : 0]  RQ=1013  \n
+\    15     0   0 00-00103  8926----------88cc---------- COUNTER=16[0 : 0]  RQ=1012  \n
+\    16     0   0 00-00000  88cc-------------------------- COUNTER=17[0 : 0]  RQ=1019  \n
+\    17     0   0 00-00001  88cc-------------------------- COUNTER=18[27988 : 10803375]  RQ=1018  \n
+\    18     0   0 00-00002  88cc-------------------------- COUNTER=19[0 : 0]  RQ=1017  \n
+\    19     0   0 00-00003  88cc-------------------------- COUNTER=20[27989 : 10803761]  RQ=1016  \n
+\    20     0   0 00-00100  88cc-------------------------- COUNTER=21[27989 : 10803761]  RQ=1015  \n
+\    21     0   0 00-00101  88cc-------------------------- COUNTER=22[0 : 0]  RQ=1014  \n
+\    22     0   0 00-00102  88cc-------------------------- COUNTER=23[27989 : 10803761]  RQ=1013  \n
+\    23     0   0 00-00103  88cc-------------------------- COUNTER=24[0 : 0]  RQ=1012  \n
+"
+fltr-grpshow: "
+\ UGID  USER     BGID  flags  nflt format \n
+"
+genio-alloc_list: "
+\ Alloc block list is empty \n
+"
+vif 2.0: "
+\        lifid: 2 \n
+\          uif: 0 \n
+\      channel: 0 \n
+\        samid: 5774 \n
+\        state: UP \n
+\      adminst: UP \n
+\        flags: NIV, CREATED, VIFHASH, VUP, VIFINFO, DCXUP \n
+\     vifindex: 243 \n
+\         hash: 243 \n
+\     priority: 0 \n
+\      speccfg.spec_type   : 4 \n
+\      speccfg.cos         : 0 \n
+\      speccfg.vlan        : 0 \n
+\      speccfg.rate_limit  : 0 \n
+\     provinfo.oui : 00 00 0c \n
+\     provinfo.type: SAM_CA \n
+\     provinfo.data.vifid  : 5774 \n
+\     provinfo.data.cookie : 0x9ac868 \n
+\     provinfo.data.viftype: ETH \n
+\      vifinfo.priority    : 0 \n
+\      vifinfo.vifid       : 2 \n
+\      vifinfo.default_cos : 0 \n
+\      vifinfo.vifstate    : E---- \n
+\      vifinfo.vlan.vlan_mode: 0 \n
+\      vifinfo.vlan.vlan_id: 999 \n
+\      vifinfo.cir         : 0 \n
+\      vifinfo.ratelimit.burstsize   : 0 \n
+\      vifinfo.ratelimit.rate        : -1 \n
+\   configinfo.len         : 14  \n
+\   configinfo.data[0]     : 00 00 0c 01 00 08 00 01 00 04 00 00 00 00  \n
+\   req status: OK \n
+\       req cc: SUCCESS \n
+\     ev trace: REGISTER REGISTER_OK REGISTER REGISTER_OK REGISTER REGISTER_OK REGISTER REGISTER_OK \n
+\        REQ-TYPE  SUB-TYPE  REQ_SENT RESP_RECV  REQ_RECV RESP_SENT    RETRY/INPRO \n
+\         CREATE2                   2         2         0         0         0/1 \n
+\          DELETE                   1         1         0         0         0/1 \n
+\          ENABLE                   2         2         0         0         0/1 \n
+\                 Enable(A)         2         2 \n
+\                 Enable(S)         0         0 \n
+\            SET3                   0         0         2         2         0/0 \n
+\        REGISTER                   5         5         0         0         0/1 \n
+\  reg'd addrs: vlan    0 mac 00:25:b5:02:01:10 \n
+\               vlan    0 mac ff:ff:ff:ff:ff:ff \n
+\               vlan    0 mac 33:33:00:00:00:01 \n
+\               vlan    0 mac 01:00:5e:00:00:01 \n
+\               vlan    0 mac 33:33:ff:02:01:10 \n
+\               vlan    0 mac 33:33:00:00:02:02 \n
+\               vlan    0 mac 01:80:c2:00:00:0e \n
+\               vlan    0 mac 01:80:c2:00:00:00 \n
+\               vlan    0 mac 01:80:c2:00:00:03 \n
+\  inadd addrs: \n
+\  toadd addrs: \n
+\  indel addrs: \n
+\  todel addrs: \n
+\ ======================================================== \n
+"
+vif 3.1: "
+\        lifid: 3 \n
+\          uif: 1 \n
+\      channel: 0 \n
+\        samid: 5775 \n
+\        state: UP \n
+\      adminst: UP \n
+\        flags: NIV, CREATED, VIFHASH, VUP, VIFINFO, DCXUP \n
+\     vifindex: 166 \n
+\         hash: 166 \n
+\     priority: 0 \n
+\      speccfg.spec_type   : 4 \n
+\      speccfg.cos         : 0 \n
+\      speccfg.vlan        : 0 \n
+\      speccfg.rate_limit  : 0 \n
+\     provinfo.oui : 00 00 0c \n
+\     provinfo.type: SAM_CA \n
+\     provinfo.data.vifid  : 5775 \n
+\     provinfo.data.cookie : 0x9ac87e \n
+\     provinfo.data.viftype: ETH \n
+\      vifinfo.priority    : 0 \n
+\      vifinfo.vifid       : 3 \n
+\      vifinfo.default_cos : 0 \n
+\      vifinfo.vifstate    : E---- \n
+\      vifinfo.vlan.vlan_mode: 0 \n
+\      vifinfo.vlan.vlan_id: 999 \n
+\      vifinfo.cir         : 0 \n
+\      vifinfo.ratelimit.burstsize   : 0 \n
+\      vifinfo.ratelimit.rate        : -1 \n
+\   configinfo.len         : 14  \n
+\   configinfo.data[0]     : 00 00 0c 01 00 08 00 01 00 04 00 00 00 00  \n
+\   req status: OK \n
+\       req cc: SUCCESS \n
+\     ev trace: LINK_DOWN LINK_UP CREATE ENABLE CREATE_OK ENABLE ENABLE_OK SET_UP \n
+\        REQ-TYPE  SUB-TYPE  REQ_SENT RESP_RECV  REQ_RECV RESP_SENT    RETRY/INPRO \n
+\         CREATE2                   1         1         0         0         0/1 \n
+\          ENABLE                   1         1         0         0         0/1 \n
+\                 Enable(A)         1         1 \n
+\                 Enable(S)         0         0 \n
+\            SET3                   0         0         1         1         0/0 \n
+\  reg'd addrs: \n
+\  inadd addrs: \n
+\  toadd addrs: \n
+\  indel addrs: \n
+\  todel addrs: \n
+\ ======================================================== \n
+"
+clsf-showdigest: "
+\  \n
+\ --------------------------------- Bit Position ------------------------------------- \n
+\               7      6      5      4      3      2      1      0 \n
+\ ----------------------------------------------------------------------------------------- \n
+\ SIA_LOOP  : Rsvd[7:6]     SIA[5:4]      E-ACL  I-ACL  f-loop loop \n
+\ PARS_RESA : IPv4   IPv6   IP-Frg TCP    UDP    UIF    E-CHNL FCoE \n
+\ PARS_RESB : IPv4   IPv6   IP-Frg TCP    UDP    UIF    E-CHNL[1-0] \n
+\ PARS_RESC : IPv4   IPv6   IP-Frg TCP    UDP    T/UL4  Lyr-L3 Lyr-L4 \n
+"
+clsf-showlif: "
+\ % Command needs at least 1 arguments \n
+"
+clsf-showtbl: "
+\  \n
+\ TABLE=0 LIFs: 0 1  \n
+\ ------------------------------------------------------------------ \n
+\ HW_ID TBLID LIF PARS_RESB L2+12[12]                \n
+\ ------------------------------------------------------------------ \n
+\     0     0   0 00-00000  8926----------8100-----88cc COUNTER=1[0 : 0]  RQ=1019  \n
+\     1     0   0 00-00001  8926----------8100-----88cc COUNTER=2[1 : 396]  RQ=1018  \n
+\     2     0   0 00-00002  8926----------8100-----88cc COUNTER=3[0 : 0]  RQ=1017  \n
+\     3     0   0 00-00003  8926----------8100-----88cc COUNTER=4[0 : 0]  RQ=1016  \n
+\     4     0   0 00-00100  8926----------8100-----88cc COUNTER=5[0 : 0]  RQ=1015  \n
+\     5     0   0 00-00101  8926----------8100-----88cc COUNTER=6[0 : 0]  RQ=1014  \n
+\     6     0   0 00-00102  8926----------8100-----88cc COUNTER=7[0 : 0]  RQ=1013  \n
+\     7     0   0 00-00103  8926----------8100-----88cc COUNTER=8[0 : 0]  RQ=1012  \n
+\     8     0   0 00-00000  8926----------88cc---------- COUNTER=9[0 : 0]  RQ=1019  \n
+\     9     0   0 00-00001  8926----------88cc---------- COUNTER=10[0 : 0]  RQ=1018  \n
+\    10     0   0 00-00002  8926----------88cc---------- COUNTER=11[0 : 0]  RQ=1017  \n
+\    11     0   0 00-00003  8926----------88cc---------- COUNTER=12[0 : 0]  RQ=1016  \n
+\    12     0   0 00-00100  8926----------88cc---------- COUNTER=13[0 : 0]  RQ=1015  \n
+\    13     0   0 00-00101  8926----------88cc---------- COUNTER=14[0 : 0]  RQ=1014  \n
+\    14     0   0 00-00102  8926----------88cc---------- COUNTER=15[0 : 0]  RQ=1013  \n
+\    15     0   0 00-00103  8926----------88cc---------- COUNTER=16[0 : 0]  RQ=1012  \n
+\    16     0   0 00-00000  88cc-------------------------- COUNTER=17[0 : 0]  RQ=1019  \n
+\    17     0   0 00-00001  88cc-------------------------- COUNTER=18[27988 : 10803375]  RQ=1018  \n
+\    18     0   0 00-00002  88cc-------------------------- COUNTER=19[0 : 0]  RQ=1017  \n
+\    19     0   0 00-00003  88cc-------------------------- COUNTER=20[27989 : 10803761]  RQ=1016  \n
+\    20     0   0 00-00100  88cc-------------------------- COUNTER=21[27989 : 10803761]  RQ=1015  \n
+\    21     0   0 00-00101  88cc-------------------------- COUNTER=22[0 : 0]  RQ=1014  \n
+\    22     0   0 00-00102  88cc-------------------------- COUNTER=23[27989 : 10803761]  RQ=1013  \n
+\    23     0   0 00-00103  88cc-------------------------- COUNTER=24[0 : 0]  RQ=1012  \n
+"
+niccfgl: "
+\ % Command not found \n
+"
+hostmap: "
+\ Host_Id to cartridge/instance/link mapping \n
+\ hostid cartridge instance host_link linkwidth flags \n
+\ ====== ========= ======== ========= ========= ===== \n
+\      0         0        0         0         2     0 \n
+"
+pcie_links: "
+\ % Command not found \n
+"
+eg_asic_hang_counters: "
+\ % Command not found \n
+"
+overlay_list: "
+\ % Command not found \n
+"
+overlay_details: "
+\ % Command not found \n
+"
+lunmap: "
+\  \n
+"
+login: "
+\  \n
+"
+lunlist: "
+\  \n
+"
+echash_cfg: "
+\ UIF: 0 \n
+\ eth fields:     MAC_SA, MAC_DA, SRC_PORT, DST_PORT, SRC_IP, DST_IP \n
+\ fcoe fields:    MAC_SA, MAC_DA, OX_ID, RX_ID, S_ID, D_ID \n
+\ hash bins:      1,3,1,3, 1,3,1,3, 1,3,1,3, 1,3,1,3 \n
+\ crc8 hash poly: polynomial 0x12F \n
+\ UIF: 1 \n
+\ eth fields:     MAC_SA, MAC_DA, SRC_PORT, DST_PORT, SRC_IP, DST_IP \n
+\ fcoe fields:    MAC_SA, MAC_DA, OX_ID, RX_ID, S_ID, D_ID \n
+\ hash bins:      0,2,0,2, 0,2,0,2, 0,2,0,2, 0,2,0,2 \n
+\ crc8 hash poly: polynomial 0x12F \n
+"
+vif_tbl: "
+\ VIFLIST: LIFS \n
+\    2899: 1 \n
+\    2982: 2 \n
+\    2990: 0 \n
+\    2991: 2 \n
+\    2992: 2 \n
+"
+lif_nserv: "
+\ ---- ------------------------ ------------------------ ------------------------  \n
+\ lif lif state          ingress netflow    egress netflow      \n
+\ ---- ------------------------ ------------------------ ------------------------  \n
+\   2 UP                 NOT_USED           NOT_USED            \n
+\   3 UP                 NOT_USED           NOT_USED            \n
+\ acltab: \n
+\           EGRESS           INGRESS \n
+\  IDX  UIF   RQ   ACT | UIF   RQ   ACT | RULE \n
+\    0: ---- ----- ------ | ---- ----- ------ | \n
+\    1: ---- ----- ------ | ---- ----- ------ | \n
+\    2: ---- ----- ------ | ---- ----- ------ | \n
+\    3: ---- ----- ------ | ---- ----- ------ | \n
+\    4: ---- ----- ------ | ---- ----- ------ | \n
+\    5: ---- ----- ------ | ---- ----- ------ | \n
+\    6: ---- ----- ------ | ---- ----- ------ | \n
+\    7: ---- ----- ------ | ---- ----- ------ | \n
+\  \n
+\  IG0 Hit:           0    EG0 Hit:          0 \n
+\  IG1 Hit:           0    EG1 Hit:          0 \n
+"
