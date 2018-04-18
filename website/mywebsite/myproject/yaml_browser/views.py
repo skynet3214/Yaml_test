@@ -12,23 +12,29 @@ html_webpage = '''
  <html>
  <body>
  <h2>Building a yaml-browser</h2>
- <p>Beginners html page</p>
- <form action="/your-name/" method="post">
+ <p>Paste your yaml file here</p>
+ 
+ <form action="/your-name/" method="post" name="yaml_file_text_box" input type="text">
   
-  Paste your yaml file here:<br>
-  <input type="text" name="yaml_file_text_box">
-  <br>
+  <textarea name="yaml_file_text_box" rows="30" cols="50"> 
+  </textarea>
   <input type="submit" value="Submit">
 </form>
+ 
  </body>
  </html>'''
+
+str2 = ""
 
 html_webpage_2 = '''
 <!DOCTYPE html>
  <html>
  <body>
+
+ <a href={value2}>{fname}</a> 
  <h2>prcessing data from a yaml-browser</h2>
- <p>{fname}</p>
+ 
+ <p>str2</p>
 </form>
  </body>
  </html>'''
@@ -37,11 +43,16 @@ def home(request):
 	if request.method == "POST":
 		screenname = request.POST.get("yaml_file_text_box", None)
 		doc2 = yaml.load(screenname)
-		for key, value in doc2.items():
-			print key,
-			print value
+		'''for key, value in doc2.items():
+			print "{}:::::{}".format(key, value)'''
+		print doc2['uif 0']
+		print doc2['adv_uifetscfg 0']
+		#return HttpResponse(doc2.values(), content_type="text/plain")
+		global str2
+		str2 = doc2['adv_uifetscfg 0']
 
-		return HttpResponse(html_webpage_2.format(fname=doc2)) 
+
+		return HttpResponse(html_webpage_2.format(fname=doc2.keys(), value2=doc2['adv_uifetscfg 0'])) 
 
 	return HttpResponse(html_webpage)
 	#return HttpResponse('Hello, World!')

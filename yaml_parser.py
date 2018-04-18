@@ -22,17 +22,18 @@ def test_valid_yaml(filename, commands):
     try:
         with open(filename, 'r') as yaml_f:
             content = yaml_f.read()
+            print content
             doc2 = yaml.load(content)
     except IOError:
         print("Wrong file or file path")
         exit()
 
-    print sorted(doc.keys())
+    #print sorted(doc.keys())
     print sorted(doc2.keys())
 
     for command in commands:
-        print command
-        print doc[command]
+        #print command
+        #print doc[command]
         print doc2[command]
     #print doc 
 
