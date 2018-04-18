@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-#from yaml_browser import views
+#from yaml_browser import views - if u want to add every url indicidually, u have to do like this. thats why we do the include thing.
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('yaml_browser.urls')),

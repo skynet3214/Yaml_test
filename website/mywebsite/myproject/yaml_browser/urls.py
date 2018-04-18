@@ -18,4 +18,5 @@ from django.contrib import admin
 from yaml_browser import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^your-name', views.home, name='home'),
 ]
