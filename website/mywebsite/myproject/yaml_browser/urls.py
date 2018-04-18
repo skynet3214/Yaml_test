@@ -18,5 +18,6 @@ from django.contrib import admin
 from yaml_browser import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^your-name', views.home, name='home'),
+    url(r'^yaml-keys', views.yaml_key_view, name='yaml_key_view'),
+    url(r'^yaml-kkeys/yaml-key-(.*)', views.yaml_key_value_view, name='yaml_key_value_view'),
 ]

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    	{% if yaml_key_value_dict %}
+    	<ul>
+    		{% for key in sorted_yaml_keys %}
+    		<li><a href="/yaml-kkeys/yaml-key-{{key}}">{{ key }}</a></li>
+    		{% endfor %}
+    	</ul>
+    	{% endif %}
+    </body>
