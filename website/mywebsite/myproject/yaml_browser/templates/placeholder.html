@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    	{% load spacify %}
+    	
+    	{% if key_name %}
+    	<strong><p style="font-family:'Courier New'">{% autoescape off %} {{key_name}} {% endautoescape %}</p></strong>
+    	{% endif %}
+
+    	{% if to_print %}
+    	<p style="font-family:'Courier New'">{% autoescape off %} {{to_print|linebreaksbr}} {% endautoescape %}</p>
+    	{% endif %}
+    	
+    </body>
+
+    <!--- {{to_print|linebreaksbr|spacify}} ––>
+
+{% with description=game.description|safe %}
+{{description|slice:"65"}}
+{% endwith %}
+
+<p>{{to_print|spacify}}</p>
+
+<p>
+    	{% with description=to_print|linebreaksbr %}
+    	{{description|spacify}}
+    	{% endwith %}
+    </p>

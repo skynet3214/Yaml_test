@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt #this is a poor workaround 
 from django.template import Template, Context
 from django.template.loader import get_template
 import yaml
+import json
 
 # Create your views here.
 #getting the csrf error after changing the method to post 
@@ -27,13 +28,8 @@ homepage = '''
  </body>
  </html>'''
 
-placeholder = '''
-<!DOCTYPE html>
- <html>
- <body>
- <p>Placeholder html page</p>
- </body>
- </html>'''
+
+
 
 yaml_key_value_dict = {}
 
@@ -49,12 +45,30 @@ def yaml_key_view(request):
 	return render(request, 'index.html', {'yaml_key_value_dict':yaml_key_value_dict, 'sorted_yaml_keys':sorted(yaml_key_value_dict.keys())})
 
 @csrf_exempt
-def yaml_key_value_view(request, something):
-	print something
-	return HttpResponse(something+':'+'\n'+'\n'+yaml_key_value_dict[something], content_type="text/plain")
+def yaml_key_value_view(request, key):
+
+	#print "Request :: {} Key:: {}".format(request, yaml_key_value_dict[key])
+	
+	
+	
+	if type(yaml_key_value_dict[key]) is str:
+		yaml_key_value_dict[key] = yaml_key_value_dict[key].replace(" ", "&nbsp;")
+		print yaml_key_value_dict[key] 
+	
+	
+	return render(request, 'placeholder.html', {'key_name':key,'to_print':yaml_key_value_dict[key]})
+	#return HttpResponse(key+':'+'\n'+'\n'+str(yaml_key_value_dict[key]), content_type="text/plain")
+
+	
+	
+		#print str(yaml_key_value_dict[key])
+	#return HttpResponse(key+':'+'\n'+'\n'+str(yaml_key_value_dict[key]), content_type="text/plain")
+	#return render(request, 'placeholder.html', {'to_print':yaml_key_value_dict[key]})
+	#return render(request, 'extend.html', {'yaml_key_value_dict':yaml_key_value_dict, 'sorted_yaml_keys':sorted(yaml_key_value_dict.keys())})
 
 
 
+#Converting to string doe not work in all places. 
 
 
 

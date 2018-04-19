@@ -5,7 +5,12 @@
     	<ul>
     		{% for key in sorted_yaml_keys %}
     		<li><a href="/yaml-kkeys/yaml-key-{{key}}">{{ key }}</a></li>
+    		<body>
+    			{% block 'body' %}
+    			{% endblock %}
+    		</body>
     		{% endfor %}
     	</ul>
     	{% endif %}
     </body>
+
